@@ -1,0 +1,2 @@
+rootProject.name='ConpontTest'
+include ':app',':login',':commonlibrary'
