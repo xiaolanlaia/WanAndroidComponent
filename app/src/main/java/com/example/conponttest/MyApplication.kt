@@ -2,6 +2,7 @@ package com.example.conponttest
 
 import android.app.Application
 import com.alibaba.android.arouter.launcher.ARouter
+import com.example.login.LoginApplication
 
 /**
  *  @author
@@ -19,6 +20,8 @@ class MyApplication : Application(){
         ARouter.openDebug()
         // 初始化ARouter
         ARouter.init(this)
+
+        LoginApplication.onCreateAsLibrary()
     }
 
     private fun isDebug(): Boolean {
