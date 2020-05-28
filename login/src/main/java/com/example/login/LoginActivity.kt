@@ -3,7 +3,6 @@ package com.example.login
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
 import com.alibaba.android.arouter.facade.annotation.Route
-import com.alibaba.android.arouter.launcher.ARouter
 
 
 @Route(path = "/login/loginActivity")

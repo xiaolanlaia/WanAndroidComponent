@@ -1,4 +1,4 @@
-package com.example.conponttest
+package com.example.componenttest
 
 import org.junit.Test
 

@@ -4,13 +4,13 @@ apply plugin: 'kotlin-android-extensions'
 apply plugin: 'kotlin-kapt'
 
 android {
-    compileSdkVersion rootProject.ext.android["compileSdkVersion"]
+    compileSdkVersion deps.androidx.compileSdkVersion
 
     defaultConfig {
-        minSdkVersion rootProject.ext.android["minSdkVersion"]
-        targetSdkVersion rootProject.ext.android["targetSdkVersion"]
-        versionCode rootProject.ext.android["versionCode"]
-        versionName rootProject.ext.android["versionName"]
+        minSdkVersion deps.androidx.minSdkVersion
+        targetSdkVersion deps.androidx.targetSdkVersion
+        versionCode deps.androidx.versionCode
+        versionName deps.androidx.versionName
         javaCompileOptions {
             annotationProcessorOptions {
                 arguments = [AROUTER_MODULE_NAME: project.getName()]
@@ -41,14 +41,14 @@ dependencies {
     implementation fileTree(dir: 'libs', include: ['*.jar'])
 
 
-    implementation rootProject.ext.dependencies["kotlin-stdlib-jdk7"]
-    implementation rootProject.ext.dependencies["appcompat"]
-    implementation rootProject.ext.dependencies["core-ktx"]
-    implementation rootProject.ext.dependencies["constraintlayout"]
-    implementation rootProject.ext.dependencies["junit"]
-    implementation rootProject.ext.dependencies["test-ext-junit"]
-    implementation rootProject.ext.dependencies["espresso-core"]
-    implementation rootProject.ext.dependencies["arouter-api"]
-    kapt rootProject.ext.dependencies["arouter-compiler"]
+    api deps.dependencies.kotlin_stdlib_jdk7
+    api deps.dependencies.appcompat
+    api deps.dependencies.core_ktx
+    api deps.dependencies.constraintlayout
+    api deps.dependencies.junit
+    api deps.dependencies.test_junit
+    api deps.dependencies.espresso_core
+    api deps.dependencies.arouter_api
+    kapt deps.dependencies.arouter_compiler
 
 }

@@ -1,4 +1,4 @@
-package com.example.conponttest
+package com.example.componenttest
 
 import android.app.Application
 import com.alibaba.android.arouter.launcher.ARouter
