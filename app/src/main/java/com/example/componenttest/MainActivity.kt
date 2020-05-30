@@ -14,7 +14,7 @@ class MainActivity : AppCompatActivity() {
 
         tv_center.setOnClickListener {
 
-            ARouter.getInstance().build("/login/loginActivity").navigation()
+            ARouter.getInstance().build("/login/LoginTransferActivity").navigation()
         }
     }
 }

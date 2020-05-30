@@ -1,0 +1,110 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:tools="http://schemas.android.com/tools"
+    xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto"
+    tools:ignore="MissingDefaultResource">
+    <data>
+
+        <variable name="vm" type="com.example.login.ui.LoginViewModel"/>
+    </data>
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:gravity="center"
+        >
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/logon_phone_row"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            android:layout_marginStart="@dimen/dp_30"
+            android:layout_marginEnd="@dimen/dp_30"
+            android:layout_marginBottom="10dp"
+            >
+            <EditText
+                android:id="@+id/logon_phone"
+                android:text="@{vm.phone}"
+                android:hint="请输入账号"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:drawableStart="@mipmap/icon_phone"
+                app:addTextChangedListener="@{vm.phoneTextAfterChange}"
+                />
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/logon_password_row"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            android:layout_marginStart="@dimen/dp_30"
+            android:layout_marginEnd="@dimen/dp_30"
+            android:layout_marginBottom="10dp"
+            android:layout_below="@id/logon_phone_row"
+            >
+            <EditText
+                android:id="@+id/logon_password"
+                android:text="@{vm.password}"
+                android:hint="请输入密码"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:drawableStart="@mipmap/icon_password"
+                app:addTextChangedListener="@{vm.passwordTextAfterChange}"
+
+
+                />
+        </com.google.android.material.textfield.TextInputLayout>
+
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/logon_repassword_row"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            android:layout_marginStart="@dimen/dp_30"
+            android:layout_marginEnd="@dimen/dp_30"
+            android:layout_marginBottom="10dp"
+            android:layout_below="@id/logon_password_row"
+            >
+            <EditText
+                android:id="@+id/logon_repassword"
+                android:text="@{vm.logonRepassword}"
+                android:hint="请确认密码"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:drawableStart="@mipmap/icon_password"
+                android:drawablePadding="@dimen/dp_20"
+                android:layout_below="@id/login_password"
+                app:addTextChangedListener="@{vm.logonRepasswordChangeListener}"
+
+                />
+        </com.google.android.material.textfield.TextInputLayout>
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="?attr/actionBarSize"
+            android:layout_below="@id/logon_repassword_row"
+            android:layout_marginStart="@dimen/dp_20"
+            android:layout_marginEnd="@dimen/dp_20"
+        >
+
+            <TextView
+                android:id="@+id/logon"
+                android:text="注册并登录"
+                android:gravity="center"
+                android:layout_width="0dp"
+                android:layout_weight="1"
+                android:layout_height="match_parent"
+                android:textSize="@dimen/sp_20"
+                android:textColor="@color/color_black"
+                android:onClick="@{vm.loginClickListener}"
+
+                />
+        </LinearLayout>
+
+    </RelativeLayout>
+</layout>

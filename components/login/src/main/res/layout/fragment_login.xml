@@ -1,0 +1,109 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:ignore="MissingDefaultResource,ResourceName">
+
+    <data>
+
+        <variable
+            name="vm"
+            type="com.example.login.ui.LoginViewModel" />
+    </data>
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:gravity="center"
+        android:background="@color/color_white"
+        >
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/login_phone_row"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            android:layout_marginStart="@dimen/dp_30"
+            android:layout_marginEnd="@dimen/dp_30"
+            android:layout_marginBottom="10dp"
+            >
+
+            <EditText
+                android:id="@+id/login_phone"
+                android:text="@{vm.phone}"
+                android:hint="请输入账号"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:drawableStart="@mipmap/icon_phone"
+                android:drawablePadding="@dimen/dp_20"
+                app:addTextChangedListener="@{vm.phoneTextAfterChange}"
+                />
+        </com.google.android.material.textfield.TextInputLayout>
+
+
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/login_password_row"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/login_phone_row"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            android:layout_marginStart="@dimen/dp_30"
+            android:layout_marginEnd="@dimen/dp_30"
+            android:layout_marginTop="10dp"
+            >
+            <EditText
+                android:id="@+id/login_password"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:drawableStart="@mipmap/icon_password"
+                android:drawablePadding="@dimen/dp_20"
+                android:hint="请输入密码"
+                android:imeOptions="actionGo"
+                android:text="@{vm.password}"
+                app:addTextChangedListener="@{vm.passwordTextAfterChange}" />
+        </com.google.android.material.textfield.TextInputLayout>
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="?attr/actionBarSize"
+            android:layout_below="@id/login_password_row"
+            android:layout_marginStart="@dimen/dp_20"
+            android:layout_marginEnd="@dimen/dp_20"
+            >
+
+            <TextView
+                android:id="@+id/to_logon"
+                android:text="注册"
+                android:gravity="center"
+                android:layout_width="0dp"
+                android:layout_weight="1"
+                android:layout_height="match_parent"
+                android:textSize="@dimen/sp_20"
+                android:textColor="@color/color_black"
+                android:onClick="@{vm.loginClickListener}"
+
+
+                />
+
+            <TextView
+                android:id="@+id/login_in"
+                android:text="登录"
+                android:gravity="center"
+                android:layout_width="0dp"
+                android:layout_weight="1"
+                android:layout_height="match_parent"
+                android:textSize="@dimen/sp_20"
+                android:textColor="@color/color_black"
+                android:onClick="@{vm.loginClickListener}"
+                />
+
+        </LinearLayout>
+
+
+
+
+
+    </RelativeLayout>
+</layout>

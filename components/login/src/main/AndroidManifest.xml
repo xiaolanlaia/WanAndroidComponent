@@ -3,7 +3,7 @@
     package="com.example.login">
 
     <application>
-        <activity android:name=".LoginActivity"/>
+        <activity android:name=".ui.activity.LoginTransferActivity"/>
     </application>
 
 </manifest>
