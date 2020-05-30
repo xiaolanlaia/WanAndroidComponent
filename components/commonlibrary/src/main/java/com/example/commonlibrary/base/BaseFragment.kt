@@ -1,38 +1,21 @@
-package com.wjf.dev.base
+package com.example.commonlibrary.base
 
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.view.WindowManager
-import androidx.databinding.DataBindingUtil
-import androidx.databinding.ViewDataBinding
-import androidx.fragment.app.DialogFragment
-import androidx.lifecycle.ViewModel
-import com.example.commonlibrary.CommonMethod
+import androidx.fragment.app.Fragment
 import com.example.commonlibrary.R
 
 /**
- *  @author  xiaolanlaia
- *
- *  @create  2020/1/11 11:52
- *
+ *       Created by xiaolanlaia on 2019/4/30 14:08
  */
-
-
-
-abstract class BaseMVVMDialogFragment<VSD : ViewDataBinding, VM : ViewModel> : DialogFragment(),
+abstract class BaseFragment : Fragment(),
     CommonMethod {
 
-    lateinit var bindView: VSD
-    lateinit var vm: VM
-
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
-        var v = inflater.inflate(initContentViewID(), container, false)
-        bindView = DataBindingUtil.bind(v)!!
-        vm = initViewModel()
-        bindView.lifecycleOwner = this
-        return v
+        return inflater.inflate(initContentViewID(), container, false)
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
@@ -50,9 +33,4 @@ abstract class BaseMVVMDialogFragment<VSD : ViewDataBinding, VM : ViewModel> : D
             }
         }
     }
-
-
-
-    abstract fun initViewModel(): VM
-
 }

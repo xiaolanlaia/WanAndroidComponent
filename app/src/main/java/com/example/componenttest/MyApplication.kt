@@ -1,8 +1,7 @@
 package com.example.componenttest
 
 import android.app.Application
-import com.alibaba.android.arouter.launcher.ARouter
-import com.example.login.LoginApplication
+import com.example.commonlibrary.CommonApplication
 
 /**
  *  @author
@@ -12,20 +11,6 @@ import com.example.login.LoginApplication
  */
 
 
-class MyApplication : Application(){
-
-    override fun onCreate() {
-        super.onCreate()
-        ARouter.openLog()
-        ARouter.openDebug()
-        // 初始化ARouter
-        ARouter.init(this)
-
-        LoginApplication.onCreateAsLibrary()
-    }
-
-    private fun isDebug(): Boolean {
-        return BuildConfig.DEBUG
-    }
+class MyApplication : CommonApplication(){
 
 }

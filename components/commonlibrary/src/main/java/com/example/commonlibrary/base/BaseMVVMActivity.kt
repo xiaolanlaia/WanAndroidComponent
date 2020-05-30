@@ -1,4 +1,4 @@
-package com.example.commonlibrary
+package com.example.commonlibrary.base
 
 import androidx.databinding.DataBindingUtil
 import androidx.databinding.ViewDataBinding
@@ -7,6 +7,7 @@ import android.view.View
 import android.view.WindowManager
 import androidx.appcompat.app.AppCompatActivity
 import androidx.lifecycle.ViewModel
+import com.example.commonlibrary.R
 
 /**
  *       Created by xiaolanlaia on 2019/4/29 17:08

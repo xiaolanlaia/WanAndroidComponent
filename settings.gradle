@@ -1,2 +1,5 @@
 rootProject.name='ConpontTest'
 include ':app',':login',':commonlibrary'
+
+project(':commonlibrary').projectDir = new File( 'components/commonlibrary' )
+project(':login').projectDir = new File( 'components/login' )

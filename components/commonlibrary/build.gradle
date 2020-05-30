@@ -22,8 +22,15 @@ android {
     }
 
     buildTypes {
+        debug {
+            minifyEnabled false
+            signingConfig signingConfigs.debug
+            buildConfigField "String", "ApiHost", "\"https://www.wanandroid.com/\""
+
+        }
         release {
             minifyEnabled false
+            buildConfigField "String", "ApiHost", "\"https://www.wanandroid.com/\""
             proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
         }
     }
@@ -48,7 +55,19 @@ dependencies {
     api deps.dependencies.junit
     api deps.dependencies.test_junit
     api deps.dependencies.espresso_core
+
+    api deps.dependencies.rxjava
+    api deps.dependencies.rxandroid
+    api deps.dependencies.retrofit
+    api deps.dependencies.adapter_rxjava2
+    api deps.dependencies.converter_gson
+    api deps.dependencies.logging_interceptor
+    api deps.dependencies.anko
+    api deps.dependencies.design
+
+
     api deps.dependencies.arouter_api
     kapt deps.dependencies.arouter_compiler
+
 
 }

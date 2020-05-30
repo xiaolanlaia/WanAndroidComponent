@@ -1,4 +1,4 @@
-package com.example.commonlibrary
+package com.example.commonlibrary.base
 
 /**
  *       Created by xiaolanlaia on 2019/5/3 16:09

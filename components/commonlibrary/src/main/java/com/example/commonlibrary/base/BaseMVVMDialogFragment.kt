@@ -1,24 +1,28 @@
-package com.example.commonlibrary
+package com.wjf.dev.base
 
-import androidx.databinding.DataBindingUtil
-import androidx.databinding.ViewDataBinding
 import android.os.Bundle
-import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.view.WindowManager
-
+import androidx.databinding.DataBindingUtil
+import androidx.databinding.ViewDataBinding
+import androidx.fragment.app.DialogFragment
 import androidx.lifecycle.ViewModel
+import com.example.commonlibrary.base.CommonMethod
+import com.example.commonlibrary.R
 
 /**
- *       Created by xiaolanlaia on 2019/4/29 17:15
+ *  @author  xiaolanlaia
  *
- *       MVVM的Fragment基类，持有一个ViewDataBind和一个ViewModel
+ *  @create  2020/1/11 11:52
  *
- *       使用两个抽象函数初始化这两个实例
  */
-abstract class BaseMVVMFragment<VSD : ViewDataBinding, VM : ViewModel> : Fragment(), CommonMethod {
+
+
+
+abstract class BaseMVVMDialogFragment<VSD : ViewDataBinding, VM : ViewModel> : DialogFragment(),
+    CommonMethod {
 
     lateinit var bindView: VSD
     lateinit var vm: VM
@@ -35,12 +39,12 @@ abstract class BaseMVVMFragment<VSD : ViewDataBinding, VM : ViewModel> : Fragmen
         super.onViewCreated(view, savedInstanceState)
         fitTransparentStatus()
         //设置状态背景栏颜色
-            if (dyeStatus()) {
-                activity?.let {
-                    it.window.clearFlags(WindowManager.LayoutParams.FLAG_TRANSLUCENT_STATUS)
-                    it.window.statusBarColor = it.resources.getColor(R.color.colorPrimary)
-                }
-            } else {
+        if (dyeStatus()) {
+            activity?.let {
+                it.window.clearFlags(WindowManager.LayoutParams.FLAG_TRANSLUCENT_STATUS)
+                it.window.statusBarColor = it.getColor(R.color.colorPrimary)
+            }
+        } else {
             activity?.let {
                 it.window.addFlags(WindowManager.LayoutParams.FLAG_TRANSLUCENT_STATUS)
             }

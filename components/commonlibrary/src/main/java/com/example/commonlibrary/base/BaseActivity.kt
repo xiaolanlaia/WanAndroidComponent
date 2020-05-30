@@ -1,16 +1,18 @@
-package com.example.commonlibrary
+package com.example.commonlibrary.base
 
 import android.os.Bundle
 import android.view.View
 import android.view.WindowManager
 import androidx.appcompat.app.AppCompatActivity
 import android.content.Intent
+import com.example.commonlibrary.R
 
 
 /**
  * Created by xiaolanlaia on 2019/5/3 16:00
  */
-abstract class BaseActivity : AppCompatActivity(), CommonMethod {
+abstract class BaseActivity : AppCompatActivity(),
+    CommonMethod {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
