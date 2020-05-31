@@ -1,5 +1,11 @@
 rootProject.name='ConpontTest'
-include ':app',':login',':commonlibrary'
+
+include ':app',':login',':commonlibrary', ':home',':knowledge',':navigation',':mine',':weichat'
 
 project(':commonlibrary').projectDir = new File( 'components/commonlibrary' )
 project(':login').projectDir = new File( 'components/login' )
+project(':home').projectDir = new File( 'components/home' )
+project(':knowledge').projectDir = new File( 'components/knowledge' )
+project(':navigation').projectDir = new File( 'components/navigation' )
+project(':mine').projectDir = new File( 'components/mine' )
+project(':weichat').projectDir = new File( 'components/weichat' )

@@ -11,8 +11,13 @@
           <set>
             <option value="$PROJECT_DIR$" />
             <option value="$PROJECT_DIR$/app" />
-            <option value="$PROJECT_DIR$/commonlibrary" />
-            <option value="$PROJECT_DIR$/login" />
+            <option value="$PROJECT_DIR$/components/commonlibrary" />
+            <option value="$PROJECT_DIR$/components/home" />
+            <option value="$PROJECT_DIR$/components/knowledge" />
+            <option value="$PROJECT_DIR$/components/login" />
+            <option value="$PROJECT_DIR$/components/mine" />
+            <option value="$PROJECT_DIR$/components/navigation" />
+            <option value="$PROJECT_DIR$/components/weichat" />
           </set>
         </option>
         <option name="resolveModulePerSourceSet" value="false" />
