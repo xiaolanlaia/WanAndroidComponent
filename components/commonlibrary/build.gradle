@@ -71,6 +71,7 @@ dependencies {
     api deps.dependencies.flowlayout
     api deps.dependencies.tablayout
     api deps.dependencies.VerticalTabLayout
+    api deps.dependencies.lifecycle_extensions
 
 
 

@@ -6,6 +6,7 @@ import com.alibaba.android.arouter.launcher.ARouter
 import com.example.commonlibrary.base.BaseActivity
 import com.example.home.ui.fragment.HomeFragment
 import com.example.main.ui.KnowledgeFragment
+import com.example.mine.ui.MineFragment
 import com.example.navigation.ui.NavigationFragment
 import com.example.weichat.ui.WeichatFragment
 import com.google.android.material.bottomnavigation.BottomNavigationView
@@ -88,7 +89,7 @@ class MainActivity : BaseActivity() {
             fragments.add(KnowledgeFragment())
             fragments.add(WeichatFragment())
             fragments.add(NavigationFragment())
-//            fragments.add(MineFragment())
+            fragments.add(MineFragment())
             fragmentManager.beginTransaction().replace(containerId,fragments[0]).commit()
         }
 
