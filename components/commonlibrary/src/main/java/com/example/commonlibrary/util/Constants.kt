@@ -6,7 +6,7 @@ import com.example.commonlibrary.BuildConfig
 /**
  * 常量
  */
-internal interface Constants {
+object Constants {
 
     /**
      * 网络请求相关

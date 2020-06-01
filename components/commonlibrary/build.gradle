@@ -64,6 +64,10 @@ dependencies {
     api deps.dependencies.logging_interceptor
     api deps.dependencies.anko
     api deps.dependencies.design
+    api deps.dependencies.BaseRecyclerViewAdapterHelper
+    api deps.dependencies.glide
+    api deps.dependencies.banner
+    api deps.dependencies.cardview
 
 
     api deps.dependencies.arouter_api

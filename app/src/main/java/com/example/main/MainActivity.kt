@@ -4,6 +4,7 @@ import androidx.fragment.app.Fragment
 import androidx.fragment.app.FragmentManager
 import com.alibaba.android.arouter.launcher.ARouter
 import com.example.commonlibrary.base.BaseActivity
+import com.example.home.ui.fragment.HomeFragment
 import com.google.android.material.bottomnavigation.BottomNavigationView
 import kotlinx.android.synthetic.main.activity_main.*
 //ARouter.getInstance().build("/login/LoginTransferActivity").navigation()
@@ -80,12 +81,12 @@ class MainActivity : BaseActivity() {
 
         init {
 
-//            fragments.add(HomeFragment())
+            fragments.add(HomeFragment())
 //            fragments.add(KnowledgeFragment())
 //            fragments.add(OfficialAccountFragment())
 //            fragments.add(NavigationFragment())
 //            fragments.add(MineFragment())
-//            fragmentManager.beginTransaction().replace(containerId,fragments[0]).commit()
+            fragmentManager.beginTransaction().replace(containerId,fragments[0]).commit()
         }
 
         fun select(position: Int) {
