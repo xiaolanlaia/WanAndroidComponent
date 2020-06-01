@@ -1,4 +1,4 @@
-package com.example.home.ui.adapter
+package com.example.commonlibrary.adapter
 
 import android.text.TextUtils
 import android.view.View
@@ -8,10 +8,9 @@ import android.widget.TextView
 import androidx.core.content.ContextCompat
 import com.chad.library.adapter.base.BaseQuickAdapter
 import com.chad.library.adapter.base.BaseViewHolder
+import com.example.commonlibrary.R
+import com.example.commonlibrary.entity.ArticleBean
 import com.example.commonlibrary.util.CodeUtil
-import com.example.home.R
-import com.example.home.entity.ArticleBean
-import com.example.home.ui.HomeViewModel
 
 /**
  * @author xiaolanlaia
@@ -19,8 +18,8 @@ import com.example.home.ui.HomeViewModel
  */
 
 
-class HomeArticleAdapter(layoutId : Int):
-    BaseQuickAdapter<ArticleBean.DataBean.DatasBean, BaseViewHolder>(layoutId) {
+class CommonArticleAdapter():
+    BaseQuickAdapter<ArticleBean.DataBean.DatasBean, BaseViewHolder>(R.layout.home_fragment_recycler_item) {
 
     private lateinit var onItemClickListener: OnItemClickListener
 
@@ -98,28 +97,28 @@ class HomeArticleAdapter(layoutId : Int):
             onItemClickListener.onItemClick(item.id!!,item.collect!!)
 
 
-            HomeViewModel.collectListener(object : HomeViewModel.Companion.SetCollectState{
-                override fun onCollect(isCollect: Boolean) {
-                    when(isCollect){
-
-                        true ->{
-                            item.collect = true
-                            helper.setImageDrawable(R.id.article_collect, ContextCompat.getDrawable(mContext, R.drawable.ic_favorite_collect_24dp))
-
-                        }
-
-                        false ->{
-                            item.collect = false
-                            helper.setImageDrawable(R.id.article_collect, ContextCompat.getDrawable(mContext, R.drawable.ic_favorite_gray_24dp))
-
-                        }
-
-                    }
-                }
-
-            })
-
         }
+        //todo
+//        HomeViewModel.collectListener(object : HomeViewModel.Companion.SetCollectState{
+//            override fun onCollect(isCollect: Boolean) {
+//                when(isCollect){
+//
+//                    true ->{
+//                        item.collect = true
+//                        helper.setImageDrawable(R.id.article_collect, ContextCompat.getDrawable(mContext, R.drawable.ic_favorite_collect_24dp))
+//
+//                    }
+//
+//                    false ->{
+//                        item.collect = false
+//                        helper.setImageDrawable(R.id.article_collect, ContextCompat.getDrawable(mContext, R.drawable.ic_favorite_gray_24dp))
+//
+//                    }
+//
+//                }
+//            }
+//
+//        })
 
 
 

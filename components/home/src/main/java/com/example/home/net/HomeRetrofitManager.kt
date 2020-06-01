@@ -2,7 +2,7 @@ package com.example.home.net
 
 import com.example.commonlibrary.entity.BaseBean
 import com.example.commonlibrary.net.RetrofitManager
-import com.example.home.entity.ArticleBean
+import com.example.commonlibrary.entity.ArticleBean
 import com.example.home.entity.HomeBannerBean
 import io.reactivex.Observable
 

@@ -37,7 +37,7 @@ android {
             proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
         }
     }
-//    resourcePrefix "login"
+    resourcePrefix "mine"
     //开启DataBinding
     dataBinding {
         enabled = true

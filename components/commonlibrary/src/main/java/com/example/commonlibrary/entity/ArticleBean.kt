@@ -1,6 +1,4 @@
-package com.example.home.entity
-
-import com.example.commonlibrary.entity.BaseBean
+package com.example.commonlibrary.entity
 
 /**
  *  @author  xiaolanlaia

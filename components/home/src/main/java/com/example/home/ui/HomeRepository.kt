@@ -2,7 +2,7 @@ package com.example.home.ui
 
 import com.example.commonlibrary.entity.BaseBean
 import com.example.commonlibrary.util.doInBackground
-import com.example.home.entity.ArticleBean
+import com.example.commonlibrary.entity.ArticleBean
 import com.example.home.entity.HomeBannerBean
 import com.example.home.net.HomeRetrofitManager
 import io.reactivex.Observable

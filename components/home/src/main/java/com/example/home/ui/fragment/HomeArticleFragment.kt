@@ -12,11 +12,10 @@ import com.example.home.databinding.HomeFragmentArticleBinding
 import com.example.home.ui.HomeRepository
 import com.example.home.ui.HomeVMFactory
 import com.example.home.ui.HomeViewModel
-import com.example.home.ui.adapter.HomeArticleAdapter
+import com.example.commonlibrary.adapter.CommonArticleAdapter
 import com.youth.banner.BannerConfig
 import com.youth.banner.Transformer
 import kotlinx.android.synthetic.main.home_fragment_article.*
-import kotlinx.android.synthetic.main.home_fragment_recycler_item.*
 
 /**
  *  @author  xiaolanlaia
@@ -83,7 +82,7 @@ class HomeArticleFragment : BaseMVVMFragment<HomeFragmentArticleBinding, HomeVie
 
         }
 
-        val homeAdapter = HomeArticleAdapter(R.layout.home_fragment_recycler_item)
+        val homeAdapter = CommonArticleAdapter()
         //设置layoutManager
         home_article_recycler.layoutManager = LinearLayoutManager(context)
         home_article_recycler.adapter = homeAdapter
@@ -98,7 +97,7 @@ class HomeArticleFragment : BaseMVVMFragment<HomeFragmentArticleBinding, HomeVie
         })
 
 
-        homeAdapter.setOnItemClickListener(object: HomeArticleAdapter.OnItemClickListener {
+        homeAdapter.setOnItemClickListener(object: CommonArticleAdapter.OnItemClickListener {
             override fun onItemClick(id: Int, collect : Boolean) {
 
                 when(collect){
@@ -119,33 +118,33 @@ class HomeArticleFragment : BaseMVVMFragment<HomeFragmentArticleBinding, HomeVie
             override fun onItemClick(view: View, name: String?, id: Int?, link: String?, title: String?) {
 
                 //todo
-                when(view.id){
-
-                    article_chapter.id ->{
+//                when(view.id){
+//
+//                    article_chapter.id ->{
 //                        view.context.startActivity<TitleWithContentActivity>(
 //                            Pair(Constants.SP.TITLE_ACTIVITY_TYPE, TitleWithContentActivity.TYPE_ARTICLE_SORT_LIST),
 //                            Pair(Constants.SP.ARTICLE_TITLE,name),
 //                            Pair(Constants.SP.CID,id)
 //                        )
-                    }
-                    article_author.id ->{
-
+//                    }
+//                    article_author.id ->{
+//
 //                        view.context.startActivity<TitleWithContentActivity>(
 //                            Pair(Constants.SP.TITLE_ACTIVITY_TYPE, TitleWithContentActivity.TYPE_USER_ARTICLE_LIST),
 //                            Pair(Constants.SP.AUTHOR_NAME,name),
 //                            Pair(Constants.SP.AUTHOR_ID,id)
 //                        )
-                    }
-
-                    article_layout.id ->{
+//                    }
+//
+//                    article_layout.id ->{
 //                        view.context.startActivity<TitleWithContentActivity>(
 //                            Pair(Constants.SP.TITLE_ACTIVITY_TYPE, TitleWithContentActivity.TYPE_WEB_VIEW),
 //                            Pair(Constants.SP.URL,link),
 //                            Pair(Constants.SP.WEBVIEW_TITLE,title)
 //                        )
-                    }
-
-                }
+//                    }
+//
+//                }
 
             }
 

@@ -7,7 +7,7 @@ import com.example.commonlibrary.util.CodeUtil.checkIsLogin
 import com.example.commonlibrary.util.Constants
 import com.example.commonlibrary.util.addTo
 import com.example.commonlibrary.util.toast
-import com.example.home.entity.ArticleBean
+import com.example.commonlibrary.entity.ArticleBean
 import com.example.home.entity.HomeBannerBean
 import io.reactivex.disposables.CompositeDisposable
 

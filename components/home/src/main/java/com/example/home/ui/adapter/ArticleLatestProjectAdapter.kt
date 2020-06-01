@@ -10,7 +10,7 @@ import com.chad.library.adapter.base.BaseViewHolder
 import com.example.commonlibrary.util.CodeUtil
 import com.example.commonlibrary.util.GlideUtils
 import com.example.home.R
-import com.example.home.entity.ArticleBean
+import com.example.commonlibrary.entity.ArticleBean
 import com.example.home.ui.HomeViewModel
 
 /**

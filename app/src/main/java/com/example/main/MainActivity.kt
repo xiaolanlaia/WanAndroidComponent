@@ -6,6 +6,7 @@ import com.alibaba.android.arouter.launcher.ARouter
 import com.example.commonlibrary.base.BaseActivity
 import com.example.home.ui.fragment.HomeFragment
 import com.example.main.ui.KnowledgeFragment
+import com.example.weichat.ui.WeichatFragment
 import com.google.android.material.bottomnavigation.BottomNavigationView
 import kotlinx.android.synthetic.main.activity_main.*
 //ARouter.getInstance().build("/login/LoginTransferActivity").navigation()
@@ -84,7 +85,7 @@ class MainActivity : BaseActivity() {
 
             fragments.add(HomeFragment())
             fragments.add(KnowledgeFragment())
-//            fragments.add(OfficialAccountFragment())
+            fragments.add(WeichatFragment())
 //            fragments.add(NavigationFragment())
 //            fragments.add(MineFragment())
             fragmentManager.beginTransaction().replace(containerId,fragments[0]).commit()
