@@ -1,4 +1,4 @@
-rootProject.name='ConpontTest'
+rootProject.name='WanAndroidComponent'
 
 include ':app',':login',':commonlibrary', ':home',':knowledge',':navigation',':mine',':weichat'
 
