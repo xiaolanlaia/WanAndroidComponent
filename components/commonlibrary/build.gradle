@@ -68,6 +68,10 @@ dependencies {
     api deps.dependencies.glide
     api deps.dependencies.banner
     api deps.dependencies.cardview
+    api deps.dependencies.flowlayout
+    api deps.dependencies.tablayout
+    api deps.dependencies.VerticalTabLayout
+
 
 
     api deps.dependencies.arouter_api
