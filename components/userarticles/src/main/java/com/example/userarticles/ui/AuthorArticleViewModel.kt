@@ -1,0 +1,112 @@
+package com.example.userarticles.ui
+
+import androidx.lifecycle.MutableLiveData
+import androidx.lifecycle.ViewModel
+import com.example.commonlibrary.entity.ArticleBean
+import com.example.commonlibrary.util.addTo
+import io.reactivex.disposables.CompositeDisposable
+
+/**
+ *  @author  xiaolanlaia
+ *
+ *  @create  2020/4/10 8:59
+ *
+ */
+
+
+class AuthorArticleViewModel(val repository: AuthorArticleRepository) : ViewModel() {
+
+    val co = CompositeDisposable()
+
+    val articleList = MutableLiveData<List<ArticleBean.DataBean.DatasBean>>()
+    val articleSortList = MutableLiveData<List<ArticleBean.DataBean.DatasBean>>()
+
+    /**
+     * 作者文章列表
+     */
+//    fun getAuthorArticleList(AUTHOR_ID : Int){
+//        repository.getAuthorArticleList(AUTHOR_ID).subscribe({
+//            when(it.errorCode){
+//
+//                0 ->{
+//                    articleList.value = it.data!!.shareArticles!!.datas
+//                }
+//            }
+//        },{}).addTo(co)
+//    }
+
+    /**
+     * 按作者的昵称搜索文章
+     */
+    fun getAuthorFromNickName(nickName : String){
+
+        repository.getAuthorFromNickName(nickName).subscribe({
+
+            when(it.errorCode){
+
+                0 ->{
+                    articleList.value = it.data!!.datas
+                }
+            }
+        },{}).addTo(co)
+    }
+
+    /**
+     * 获取分类文章
+     */
+    fun getArticleSort(cid : Int){
+
+        repository.getArticleSort(cid).subscribe({
+
+            when(it.errorCode){
+
+                0 ->{
+                    articleSortList.value = it.data!!.datas
+                }
+            }
+
+        },{}).addTo(co)
+    }
+
+    /**
+     * 收藏
+     */
+    fun collect(id : Int){
+
+        repository.collect(id).subscribe({
+
+            when(it.errorCode){
+
+                0 ->{
+                    //todo
+//                    setCollectState.onCollect(true)
+                }
+            }
+
+
+        },{
+
+        }).addTo(co)
+    }
+
+    /**
+     * 取消收藏
+     */
+    fun unCollect(id : Int){
+
+        repository.unCollect(id).subscribe({
+
+            when(it.errorCode){
+
+                0 ->{
+                    //todo
+//                    setCollectState.onCollect(true)
+                }
+            }
+
+
+        },{
+
+        }).addTo(co)
+    }
+}

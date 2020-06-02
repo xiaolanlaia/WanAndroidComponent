@@ -1,18 +1,23 @@
-apply plugin: 'com.android.application'
+if (isRunUserArticle.toBoolean()) { // 1.根据之前设定的isRunHome，判断是否需要独立运行
+    apply plugin: 'com.android.application'
+} else {
+    apply plugin: 'com.android.library'
+}
+
 apply plugin: 'kotlin-android'
 apply plugin: 'kotlin-android-extensions'
-
 apply plugin: 'kotlin-kapt'
 
-Properties properties = new Properties()
-InputStream inputStream = rootProject.file('local.properties').newDataInputStream()
-properties.load(inputStream)
 
 android {
+
     compileSdkVersion deps.androidx.compileSdkVersion
 
     defaultConfig {
-        applicationId "com.example.conponttest"
+        if (isRunLogin.toBoolean()) { // 2.这里也设置一下，可运行的话，添加applicationId
+
+            applicationId "com.example.login"
+        }
         minSdkVersion deps.androidx.minSdkVersion
         targetSdkVersion deps.androidx.targetSdkVersion
         versionCode deps.androidx.versionCode
@@ -22,8 +27,8 @@ android {
                 arguments = [AROUTER_MODULE_NAME: project.getName()]
             }
         }
-        javaCompileOptions { annotationProcessorOptions { includeCompileClasspath = true }}
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+        consumerProguardFiles 'consumer-rules.pro'
     }
 
     buildTypes {
@@ -32,6 +37,7 @@ android {
             proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
         }
     }
+    resourcePrefix "userArticle"
     //开启DataBinding
     dataBinding {
         enabled = true
@@ -55,37 +61,26 @@ android {
         abortOnError false
     }
 
+
 }
 
 dependencies {
     implementation fileTree(dir: 'libs', include: ['*.jar'])
+
     implementation deps.dependencies.arouter_api
     kapt deps.dependencies.arouter_compiler
-    implementation project(':commonlibrary')
 
-    // 1.如果要独立运行，那么主工程不加载它
-    if (!isRunLogin.toBoolean()) {
-        implementation project(path: ':login')
-    }
-    if (!isRunHome.toBoolean()) {
-        implementation project(path: ':home')
-    }
-    if (!isRunKnowledge.toBoolean()) {
-        implementation project(path: ':knowledge')
-    }
-    if (!isRunMine.toBoolean()) {
-        implementation project(path: ':mine')
-    }
-    if (!isRunNavigation.toBoolean()) {
-        implementation project(path: ':navigation')
-    }
-    if (!isRunWeichat.toBoolean()) {
-        implementation project(path: ':weichat')
-    }
-    if (!isRunUserArticle.toBoolean()) {
-        implementation project(path: ':userarticles')
-    }
+    implementation project(path: ':commonlibrary')
 
-
-
+    android {
+        sourceSets {
+            main {
+                if (isRunUserArticle.toBoolean()) {
+                    manifest.srcFile 'src/main/manifest/AndroidManifest.xml'
+                } else {
+                    manifest.srcFile 'src/main/AndroidManifest.xml'
+                }
+            }
+        }
+    }
 }

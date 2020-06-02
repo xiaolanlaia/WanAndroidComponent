@@ -6,6 +6,7 @@ ext{// true : 模块可单独运行
     isRunMine=false
     isRunNavigation=false
     isRunWeichat=false
+    isRunUserArticle=false
 
 }
 

@@ -1,6 +1,6 @@
 rootProject.name='WanAndroidComponent'
 
-include ':app',':login',':commonlibrary', ':home',':knowledge',':navigation',':mine',':weichat'
+include ':app',':login',':commonlibrary', ':home',':knowledge',':navigation',':mine',':weichat',':userarticles'
 
 project(':commonlibrary').projectDir = new File( 'components/commonlibrary' )
 project(':login').projectDir = new File( 'components/login' )
@@ -9,3 +9,4 @@ project(':knowledge').projectDir = new File( 'components/knowledge' )
 project(':navigation').projectDir = new File( 'components/navigation' )
 project(':mine').projectDir = new File( 'components/mine' )
 project(':weichat').projectDir = new File( 'components/weichat' )
+project(':userarticles').projectDir = new File( 'components/userarticles' )
