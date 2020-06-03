@@ -1,8 +1,8 @@
-package com.example.main.net
+package com.example.knowledge.net
 
 import com.example.commonlibrary.net.RetrofitManager
-import com.example.main.entity.ArticleBean
-import com.example.main.entity.KnowledgeBean
+import com.example.knowledge.entity.ArticleBean
+import com.example.knowledge.entity.KnowledgeBean
 import io.reactivex.Observable
 
 /**

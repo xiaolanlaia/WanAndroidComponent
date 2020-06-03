@@ -14,9 +14,9 @@ android {
     compileSdkVersion deps.androidx.compileSdkVersion
 
     defaultConfig {
-        if (isRunLogin.toBoolean()) { // 2.这里也设置一下，可运行的话，添加applicationId
+        if (isRunUserArticle.toBoolean()) { // 2.这里也设置一下，可运行的话，添加applicationId
 
-            applicationId "com.example.login"
+            applicationId "com.example.userarticles"
         }
         minSdkVersion deps.androidx.minSdkVersion
         targetSdkVersion deps.androidx.targetSdkVersion

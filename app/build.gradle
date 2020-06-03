@@ -12,7 +12,7 @@ android {
     compileSdkVersion deps.androidx.compileSdkVersion
 
     defaultConfig {
-        applicationId "com.example.conponttest"
+        applicationId "com.example.wanandroidcomponent"
         minSdkVersion deps.androidx.minSdkVersion
         targetSdkVersion deps.androidx.targetSdkVersion
         versionCode deps.androidx.versionCode
@@ -59,9 +59,11 @@ android {
 
 dependencies {
     implementation fileTree(dir: 'libs', include: ['*.jar'])
+
+    implementation project(':commonlibrary')
     implementation deps.dependencies.arouter_api
     kapt deps.dependencies.arouter_compiler
-    implementation project(':commonlibrary')
+
 
     // 1.如果要独立运行，那么主工程不加载它
     if (!isRunLogin.toBoolean()) {

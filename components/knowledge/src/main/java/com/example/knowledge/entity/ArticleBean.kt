@@ -1,4 +1,4 @@
-package com.example.main.entity
+package com.example.knowledge.entity
 
 import com.example.commonlibrary.entity.BaseBean
 

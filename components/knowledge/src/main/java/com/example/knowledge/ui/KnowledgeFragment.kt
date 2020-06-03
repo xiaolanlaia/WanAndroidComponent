@@ -1,4 +1,4 @@
-package com.example.main.ui
+package com.example.knowledge.ui
 
 import android.os.Bundle
 import android.view.View
@@ -6,9 +6,9 @@ import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
 import androidx.recyclerview.widget.StaggeredGridLayoutManager
 import com.example.commonlibrary.base.BaseMVVMFragment
-import com.example.main.R
-import com.example.main.databinding.KnowledgeFragmentBinding
-import com.example.main.ui.adapter.KnowledgeAdapter
+import com.example.knowledge.R
+import com.example.knowledge.databinding.KnowledgeFragmentBinding
+import com.example.knowledge.ui.adapter.KnowledgeAdapter
 import kotlinx.android.synthetic.main.knowledge_fragment.*
 
 /**

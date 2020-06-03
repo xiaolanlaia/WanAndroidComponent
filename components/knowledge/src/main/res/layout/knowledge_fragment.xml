@@ -2,7 +2,7 @@
 <layout xmlns:android="http://schemas.android.com/apk/res/android">
     <data>
 
-        <variable name="vm" type="com.example.main.ui.KnowledgeViewModel"/>
+        <variable name="vm" type="com.example.knowledge.ui.KnowledgeViewModel"/>
     </data>
     <RelativeLayout
             android:orientation="vertical"

@@ -1,4 +1,4 @@
-package com.example.main
+package com.example.knowledge
 
 import org.junit.Test
 

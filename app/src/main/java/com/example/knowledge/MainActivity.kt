@@ -1,18 +1,15 @@
-package com.example.main
+package com.example.knowledge
 
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.FragmentManager
-import com.alibaba.android.arouter.launcher.ARouter
 import com.example.commonlibrary.base.BaseActivity
-import com.example.home.ui.fragment.HomeFragment
-import com.example.main.ui.KnowledgeFragment
-import com.example.mine.ui.MineFragment
-import com.example.navigation.ui.NavigationFragment
-import com.example.weichat.ui.WeichatFragment
+import com.example.commonlibrary.router.MyARouter
+import com.example.commonlibrary.util.Constants
 import com.google.android.material.bottomnavigation.BottomNavigationView
 import kotlinx.android.synthetic.main.activity_main.*
-//ARouter.getInstance().build("/login/LoginTransferActivity").navigation()
 class MainActivity : BaseActivity() {
+    var fragments = ArrayList<Fragment>()
+
 
     override fun initContentViewID(): Int = R.layout.activity_main
 
@@ -31,6 +28,7 @@ class MainActivity : BaseActivity() {
         //设置底部导航选择监听
         home_nav_view.setOnNavigationItemSelectedListener(onNavigationItemSelectedListener)
         home_nav_view.selectedItemId = R.id.nav_home
+
     }
 
     private fun setTitleText(title : String){
@@ -79,17 +77,28 @@ class MainActivity : BaseActivity() {
 
     class MainFragmentManager(val fragmentManager: FragmentManager, val containerId : Int){
 
-
-        var lastFragment = 0
         var fragments = mutableListOf<Fragment>()
 
-        init {
+        var lastFragment = 0
 
-            fragments.add(HomeFragment())
-            fragments.add(KnowledgeFragment())
-            fragments.add(WeichatFragment())
-            fragments.add(NavigationFragment())
-            fragments.add(MineFragment())
+
+
+        init {
+            val homeFragment       by lazy { MyARouter.getFragment(Constants.Page.FRAGMENT_HOME) }
+
+//            val knowledgeFragment  by lazy { MyARouter.getFragment(Constants.Page.FRAGMENT_KNOWLEDGE)}
+//
+//            val weichatFragment    by lazy { MyARouter.getFragment(Constants.Page.FRAGMENT_WEICHAT)}
+//
+//            val navigationFragment by lazy { MyARouter.getFragment(Constants.Page.FRAGMENT_NAVIGATION)}
+//
+//            val mineFragment       by lazy { MyARouter.getFragment(Constants.Page.FRAGMENT_MINE)}
+
+            fragments.add(homeFragment)
+//            fragments.add(knowledgeFragment)
+//            fragments.add(weichatFragment)
+//            fragments.add(navigationFragment)
+//            fragments.add(mineFragment)
             fragmentManager.beginTransaction().replace(containerId,fragments[0]).commit()
         }
 

@@ -6,7 +6,9 @@ import androidx.fragment.app.Fragment
 import androidx.fragment.app.FragmentManager
 import androidx.fragment.app.FragmentStatePagerAdapter
 import androidx.lifecycle.ViewModelProvider
+import com.alibaba.android.arouter.facade.annotation.Route
 import com.example.commonlibrary.base.BaseMVVMFragment
+import com.example.commonlibrary.util.Constants
 import com.example.home.R
 import com.example.home.databinding.HomeFragmentBinding
 import com.example.home.ui.HomeRepository
@@ -21,7 +23,7 @@ import kotlinx.android.synthetic.main.home_fragment.*
  *
  */
 
-
+@Route(path = Constants.Page.FRAGMENT_HOME)
 class HomeFragment : BaseMVVMFragment<HomeFragmentBinding, HomeViewModel>() {
 
 

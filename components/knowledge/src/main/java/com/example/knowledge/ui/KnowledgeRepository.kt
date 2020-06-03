@@ -1,10 +1,10 @@
-package com.example.main.ui
+package com.example.knowledge.ui
 
 
 import com.example.commonlibrary.util.doInBackground
-import com.example.main.entity.ArticleBean
-import com.example.main.entity.KnowledgeBean
-import com.example.main.net.KnowledgeRetrofitManager
+import com.example.knowledge.entity.ArticleBean
+import com.example.knowledge.entity.KnowledgeBean
+import com.example.knowledge.net.KnowledgeRetrofitManager
 import io.reactivex.Observable
 
 /**

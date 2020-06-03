@@ -1,4 +1,4 @@
-package com.example.main.ui.adapter
+package com.example.knowledge.ui.adapter
 
 
 import android.view.LayoutInflater
@@ -6,12 +6,11 @@ import android.view.View
 import android.widget.TextView
 import com.chad.library.adapter.base.BaseQuickAdapter
 import com.chad.library.adapter.base.BaseViewHolder
-import com.example.main.R
-import com.example.main.entity.KnowledgeBean
+import com.example.knowledge.R
+import com.example.knowledge.entity.KnowledgeBean
 import com.zhy.view.flowlayout.FlowLayout
 import com.zhy.view.flowlayout.TagAdapter
 import com.zhy.view.flowlayout.TagFlowLayout
-import org.jetbrains.anko.startActivity
 
 /**
  *  @author  xiaolanlaia

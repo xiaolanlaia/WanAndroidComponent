@@ -1,10 +1,9 @@
-package com.example.main.ui
+package com.example.knowledge.ui
 
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import com.example.commonlibrary.util.addTo
-import com.example.main.entity.KnowledgeBean
-import com.example.main.ui.KnowledgeRepository
+import com.example.knowledge.entity.KnowledgeBean
 import io.reactivex.disposables.CompositeDisposable
 
 /**

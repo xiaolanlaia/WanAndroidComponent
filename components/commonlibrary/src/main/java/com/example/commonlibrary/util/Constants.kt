@@ -57,7 +57,12 @@ object Constants {
 
     object Page {
 
-        const val PAGE_AUTHENTICATION = "page_authentication"
+        const val FRAGMENT_HOME = "/fragment/home"
+        const val FRAGMENT_KNOWLEDGE = "/fragment/knowledge"
+        const val FRAGMENT_WEICHAT = "/fragment/weichat"
+        const val FRAGMENT_NAVIGATION = "/fragment/navigation"
+        const val FRAGMENT_MINE = "/fragment/mine"
+
 
     }
 
