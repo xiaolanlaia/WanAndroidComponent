@@ -5,7 +5,9 @@ import android.view.View
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
 import androidx.recyclerview.widget.StaggeredGridLayoutManager
+import com.alibaba.android.arouter.facade.annotation.Route
 import com.example.commonlibrary.base.BaseMVVMFragment
+import com.example.commonlibrary.util.Constants
 import com.example.knowledge.R
 import com.example.knowledge.databinding.KnowledgeFragmentBinding
 import com.example.knowledge.ui.adapter.KnowledgeAdapter
@@ -18,7 +20,7 @@ import kotlinx.android.synthetic.main.knowledge_fragment.*
  *
  */
 
-
+@Route(path = Constants.Page.FRAGMENT_KNOWLEDGE)
 class KnowledgeFragment : BaseMVVMFragment<KnowledgeFragmentBinding, KnowledgeViewModel>() {
     override fun initViewModel(): KnowledgeViewModel =
         ViewModelProvider(this, KnowledgeVMFactory(KnowledgeRepository())).get(KnowledgeViewModel::class.java)

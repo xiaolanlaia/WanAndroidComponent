@@ -3,7 +3,9 @@ package com.example.mine.ui
 import android.os.Bundle
 import android.view.View
 import androidx.lifecycle.ViewModelProvider
+import com.alibaba.android.arouter.facade.annotation.Route
 import com.example.commonlibrary.base.BaseMVVMFragment
+import com.example.commonlibrary.util.Constants
 import com.example.mine.R
 import com.example.mine.databinding.MineFragmentBinding
 
@@ -14,7 +16,7 @@ import com.example.mine.databinding.MineFragmentBinding
  *
  */
 
-
+@Route(path = Constants.Page.FRAGMENT_MINE)
 class MineFragment : BaseMVVMFragment<MineFragmentBinding, MineViewModel>() {
     override fun initViewModel(): MineViewModel =
         ViewModelProvider(this, MineVMFactory(MineRepository())).get(MineViewModel::class.java)

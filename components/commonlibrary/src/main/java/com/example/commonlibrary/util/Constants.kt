@@ -57,11 +57,11 @@ object Constants {
 
     object Page {
 
-        const val FRAGMENT_HOME = "/fragment/home"
-        const val FRAGMENT_KNOWLEDGE = "/fragment/knowledge"
-        const val FRAGMENT_WEICHAT = "/fragment/weichat"
-        const val FRAGMENT_NAVIGATION = "/fragment/navigation"
-        const val FRAGMENT_MINE = "/fragment/mine"
+        const val FRAGMENT_HOME = "/home/HomeFragment"
+        const val FRAGMENT_KNOWLEDGE = "/knowledge/KnowledgeFragment"
+        const val FRAGMENT_WEICHAT = "/weichat/WeichatFragment"
+        const val FRAGMENT_NAVIGATION = "/navigation/NavigationFragment"
+        const val FRAGMENT_MINE = "/mine/MineFragment"
 
 
     }

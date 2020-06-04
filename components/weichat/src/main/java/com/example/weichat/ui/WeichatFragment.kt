@@ -7,7 +7,9 @@ import androidx.fragment.app.FragmentManager
 import androidx.fragment.app.FragmentStatePagerAdapter
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
+import com.alibaba.android.arouter.facade.annotation.Route
 import com.example.commonlibrary.base.BaseMVVMFragment
+import com.example.commonlibrary.util.Constants
 import com.example.weichat.R
 import com.example.weichat.databinding.FragmentOfficialAccountBinding
 import com.example.weichat.entity.OfficialAccountBean
@@ -20,7 +22,7 @@ import kotlinx.android.synthetic.main.fragment_official_account.*
  *
  */
 
-
+@Route(path = Constants.Page.FRAGMENT_WEICHAT)
 class WeichatFragment : BaseMVVMFragment<FragmentOfficialAccountBinding, WeichatViewModel>() {
     override fun initViewModel(): WeichatViewModel =
         ViewModelProvider(this, WeichatVMFactory(WeichatRepository())).get(

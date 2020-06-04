@@ -8,7 +8,9 @@ import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
+import com.alibaba.android.arouter.facade.annotation.Route
 import com.example.commonlibrary.base.BaseMVVMFragment
+import com.example.commonlibrary.util.Constants
 import com.example.navigation.R
 import com.example.navigation.databinding.NavigationFragmentBinding
 import com.example.navigation.ui.adapter.NavAdapter
@@ -25,7 +27,7 @@ import q.rorbin.verticaltablayout.widget.TabView
  *
  */
 
-
+@Route(path = Constants.Page.FRAGMENT_NAVIGATION)
 class NavigationFragment : BaseMVVMFragment<NavigationFragmentBinding, NavigationViewModel>() {
 
     val navAdapter = NavAdapter()

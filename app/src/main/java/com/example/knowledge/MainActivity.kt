@@ -8,7 +8,6 @@ import com.example.commonlibrary.util.Constants
 import com.google.android.material.bottomnavigation.BottomNavigationView
 import kotlinx.android.synthetic.main.activity_main.*
 class MainActivity : BaseActivity() {
-    var fragments = ArrayList<Fragment>()
 
 
     override fun initContentViewID(): Int = R.layout.activity_main
@@ -86,19 +85,19 @@ class MainActivity : BaseActivity() {
         init {
             val homeFragment       by lazy { MyARouter.getFragment(Constants.Page.FRAGMENT_HOME) }
 
-//            val knowledgeFragment  by lazy { MyARouter.getFragment(Constants.Page.FRAGMENT_KNOWLEDGE)}
-//
-//            val weichatFragment    by lazy { MyARouter.getFragment(Constants.Page.FRAGMENT_WEICHAT)}
-//
-//            val navigationFragment by lazy { MyARouter.getFragment(Constants.Page.FRAGMENT_NAVIGATION)}
-//
-//            val mineFragment       by lazy { MyARouter.getFragment(Constants.Page.FRAGMENT_MINE)}
+            val knowledgeFragment  by lazy { MyARouter.getFragment(Constants.Page.FRAGMENT_KNOWLEDGE)}
+
+            val weichatFragment    by lazy { MyARouter.getFragment(Constants.Page.FRAGMENT_WEICHAT)}
+
+            val navigationFragment by lazy { MyARouter.getFragment(Constants.Page.FRAGMENT_NAVIGATION)}
+
+            val mineFragment       by lazy { MyARouter.getFragment(Constants.Page.FRAGMENT_MINE)}
 
             fragments.add(homeFragment)
-//            fragments.add(knowledgeFragment)
-//            fragments.add(weichatFragment)
-//            fragments.add(navigationFragment)
-//            fragments.add(mineFragment)
+            fragments.add(knowledgeFragment)
+            fragments.add(weichatFragment)
+            fragments.add(navigationFragment)
+            fragments.add(mineFragment)
             fragmentManager.beginTransaction().replace(containerId,fragments[0]).commit()
         }
 
