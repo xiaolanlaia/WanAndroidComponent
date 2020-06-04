@@ -8,9 +8,7 @@ import android.util.Log
 import android.view.View
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
-import com.example.commonlibrary.util.SimpleTextWatcher
-import com.example.commonlibrary.util.addTo
-import com.example.commonlibrary.util.toast
+import com.example.commonlibrary.util.*
 import com.example.login.R
 import com.example.login.ui.activity.LoginTransferActivity
 import com.example.login.util.LoginConstants
@@ -76,6 +74,7 @@ class LoginViewModel(val repository: LoginRepository) : ViewModel() {
 
                 0 ->{
 
+                    SharedHelper.getEdit { sp -> sp.putBoolean(Constants.SP.IS_LOGIN,true) }
                     (context as Activity).finish()
 
                 }
@@ -94,10 +93,6 @@ class LoginViewModel(val repository: LoginRepository) : ViewModel() {
      * 注册
      */
     fun logon(context: Context){
-
-        Log.d("__logon-phone","${phone.value}")
-        Log.d("__logon-logonPassword","${password.value}")
-        Log.d("__logon-logonRepassword","${logonRepassword.value}")
 
         repository.loginUp(phone.value!!,password.value!!,logonRepassword.value!!).subscribe({
 

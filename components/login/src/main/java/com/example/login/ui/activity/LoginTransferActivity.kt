@@ -2,13 +2,14 @@ package com.example.login.ui.activity
 
 import com.alibaba.android.arouter.facade.annotation.Route
 import com.example.commonlibrary.base.BaseActivity
+import com.example.commonlibrary.util.Constants
 import com.example.login.R
 import com.example.login.ui.fragment.LoginFragment
 import com.example.login.ui.fragment.LogonFragment
 import com.example.login.util.LoginConstants
 import kotlinx.android.synthetic.main.activity_transfer.*
 
-@Route(path = "/login/LoginTransferActivity")
+@Route(path = Constants.Page.ACTIVITY_LOGIN)
 class LoginTransferActivity : BaseActivity() {
 
     var type = 0

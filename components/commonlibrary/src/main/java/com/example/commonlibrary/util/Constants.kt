@@ -60,6 +60,7 @@ object Constants {
     object Page {
 
         const val ACTIVITY_COMMON = "/CommonActivity/commonlibrary"
+        const val ACTIVITY_LOGIN = "/LoginTransferActivity/login"
 
         const val FRAGMENT_HOME = "/home/HomeFragment"
         const val FRAGMENT_KNOWLEDGE = "/knowledge/KnowledgeFragment"
@@ -70,6 +71,12 @@ object Constants {
 
         const val FRAGMENT_ARTICLE_SORT = "/ArticleSortFragment/userarticles"
         const val FRAGMENT_AUTHOR_ARTICLE = "/AuthorArticleFragment/userarticles"
+
+        const val FRAGMENT_MINE_COLLECT = "/CollectFragment/mine"
+        const val FRAGMENT_MINE_INTEGRAL = "/IntegralFragment/mine"
+        const val FRAGMENT_MINE_RANK = "/RankFragment/mine"
+        const val FRAGMENT_MINE_SETTING = "/SettingFragment/mine"
+
 
 
     }

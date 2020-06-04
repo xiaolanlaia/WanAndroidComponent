@@ -6,6 +6,9 @@ import android.view.View
 import android.widget.TextView
 import com.chad.library.adapter.base.BaseQuickAdapter
 import com.chad.library.adapter.base.BaseViewHolder
+import com.example.commonlibrary.router.MyARouter
+import com.example.commonlibrary.ui.CommonActivity
+import com.example.commonlibrary.util.Constants
 import com.example.knowledge.R
 import com.example.knowledge.entity.KnowledgeBean
 import com.zhy.view.flowlayout.FlowLayout
@@ -45,19 +48,17 @@ class KnowledgeAdapter : BaseQuickAdapter<KnowledgeBean.DataBean,BaseViewHolder>
 
             }
 
-        //todo
         tagLayout.setOnTagClickListener { view, position, parent ->
-//            view.context.startActivity<TitleWithContentActivity>(
-//                Pair(Constants.SP.TITLE_ACTIVITY_TYPE, TitleWithContentActivity.TYPE_ARTICLE_SORT_LIST),
-//                Pair(Constants.SP.ARTICLE_TITLE, item.children!![position].name),
-//                Pair(Constants.SP.CID, item.children!![position].id)
-//            )
+
+            MyARouter.openActivity(
+                Constants.Page.ACTIVITY_COMMON,
+                CommonActivity.TYPE_ARTICLE_SORT_FRAGMENT,
+                item.children!![position].name, item.children!![position].id!!
+            )
+
             false
         }
-//        tagLayput.setOnSelectListener(TagFlowLayout.OnSelectListener {
-//                selectPosSet -> LogUtil.e("选中了tag:$selectPosSet")
-//        })
-//        articleLatestProjectAdapter.setSelectedList(0)//默认选中第一个
+
 
 
 

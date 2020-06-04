@@ -5,8 +5,12 @@ import android.view.View
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
 import androidx.recyclerview.widget.LinearLayoutManager
+import com.alibaba.android.arouter.facade.annotation.Route
 import com.example.commonlibrary.adapter.CommonArticleAdapter
 import com.example.commonlibrary.base.BaseMVVMFragment
+import com.example.commonlibrary.router.MyARouter
+import com.example.commonlibrary.ui.CommonActivity
+import com.example.commonlibrary.util.Constants
 import com.example.mine.R
 import com.example.mine.databinding.MineFragmentCollectBinding
 import com.example.mine.ui.MineRepository
@@ -21,7 +25,7 @@ import kotlinx.android.synthetic.main.mine_fragment_collect.*
  *
  */
 
-
+@Route(path = Constants.Page.FRAGMENT_MINE_COLLECT)
 class CollectFragment : BaseMVVMFragment<MineFragmentCollectBinding, MineViewModel>() {
     override fun initViewModel(): MineViewModel =
         ViewModelProvider(this,
@@ -84,15 +88,14 @@ class CollectFragment : BaseMVVMFragment<MineFragmentCollectBinding, MineViewMod
             }
 
 
-
-            //todo
             override fun onItemClick(view: View, name: String?, id: Int?, link: String?, title: String?) {
 
-//                view.context.startActivity<TitleWithContentActivity>(
-//                    Pair(Constants.SP.TITLE_ACTIVITY_TYPE, TitleWithContentActivity.TYPE_WEB_VIEW),
-//                    Pair(Constants.SP.URL,link),
-//                    Pair(Constants.SP.WEBVIEW_TITLE,title)
-//                )
+                MyARouter.openActivity(
+                    Constants.Page.ACTIVITY_COMMON,
+                    CommonActivity.TYPE_WEB_VIEW,
+                    link!!,
+                    title!!)
+
             }
         })
 

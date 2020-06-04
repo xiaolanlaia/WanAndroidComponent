@@ -61,10 +61,40 @@ class CommonActivity : BaseActivity() {
 
             TYPE_AUTHOR_ARTICLE_FRAGMENT ->{
 
-                val authorArticleFragment = MyARouter.getFragment(Constants.Page.FRAGMENT_AUTHOR_ARTICLE, intent.getStringExtra(Constants.SP.PAGE_TITLE))
+                val authorArticleFragment =
+                    MyARouter.getFragment(Constants.Page.FRAGMENT_AUTHOR_ARTICLE, intent.getStringExtra(Constants.SP.PAGE_TITLE))
                 transaction.replace(R.id.info_content, authorArticleFragment).commit()
 
             }
+
+            TYPE_FRAGMENT_MINE_COLLECT ->{
+
+                val collectFragment =  MyARouter.getFragment(Constants.Page.FRAGMENT_MINE_COLLECT)
+                transaction.replace(R.id.info_content, collectFragment).commit()
+
+            }
+
+
+            TYPE_FRAGMENT_MINE_INTEGRAL ->{
+
+                val integralFragment =  MyARouter.getFragment(Constants.Page.FRAGMENT_MINE_INTEGRAL)
+                transaction.replace(R.id.info_content, integralFragment).commit()
+            }
+
+
+            TYPE_FRAGMENT_MINE_RANK ->{
+
+                val rankFragment =  MyARouter.getFragment(Constants.Page.FRAGMENT_MINE_RANK)
+                transaction.replace(R.id.info_content, rankFragment).commit()
+            }
+
+
+            TYPE_FRAGMENT_MINE_SETTING ->{
+
+                val settingFragment =  MyARouter.getFragment(Constants.Page.FRAGMENT_MINE_SETTING)
+                transaction.replace(R.id.info_content, settingFragment).commit()
+            }
+
         }
     }
 
@@ -77,6 +107,13 @@ class CommonActivity : BaseActivity() {
         const val TYPE_WEB_VIEW = 0
         const val TYPE_ARTICLE_SORT_FRAGMENT = 1
         const val TYPE_AUTHOR_ARTICLE_FRAGMENT = 2
+
+        const val TYPE_FRAGMENT_MINE_COLLECT = 3
+        const val TYPE_FRAGMENT_MINE_INTEGRAL = 4
+        const val TYPE_FRAGMENT_MINE_RANK = 5
+        const val TYPE_FRAGMENT_MINE_SETTING = 6
+
+
 
 
     }

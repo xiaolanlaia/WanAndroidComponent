@@ -22,6 +22,12 @@ object MyARouter {
         getArouter().build(pathName).navigation()
     }
 
+    fun openActivity(pathName: String,type: Int) {
+        getArouter().build(pathName)
+            .withInt(Constants.SP.TITLE_ACTIVITY_TYPE,type)
+            .navigation()
+    }
+
     fun openActivity(pathName: String,type : Int,url : String,title : String){
 
         getArouter().build(pathName)

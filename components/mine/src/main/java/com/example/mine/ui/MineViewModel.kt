@@ -1,14 +1,17 @@
 package com.example.mine.ui
 
 import android.app.Activity
-import android.app.AlertDialog
 import android.content.Context
+import android.util.Log
 import android.view.View
+import androidx.appcompat.app.AlertDialog
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import com.example.commonlibrary.CommonApplication.Companion.commonContext
 import com.example.commonlibrary.cookie.CookieManager
 import com.example.commonlibrary.entity.ArticleBean
+import com.example.commonlibrary.router.MyARouter
+import com.example.commonlibrary.ui.CommonActivity
 import com.example.commonlibrary.util.CodeUtil.checkIsLogin
 import com.example.commonlibrary.util.Constants
 import com.example.commonlibrary.util.SharedHelper
@@ -48,61 +51,63 @@ class MineViewModel(val repository: MineRepository) : ViewModel() {
 
     val mineClickListener = View.OnClickListener {
 
-        if (!checkIsLogin(it.context)) return@OnClickListener
+        when(it.id){
 
-        //todo
-//        when(it.id){
-//
-//            R.id.top_relative ->{
-//
-//                if (checkIsLogin(it.context)) return@OnClickListener
-//
-//                it.context.startActivity<TitleWithContentActivity>(
-//                    Pair(Constants.SP.TITLE_ACTIVITY_TYPE,TitleWithContentActivity.TYPE_LOGIN)
-//                )
-//
-//            }
-//
-//            R.id.mine_collect_row ->{
-//
-//
-//                it.context.startActivity<TitleWithContentActivity>(
-//                    Pair(Constants.SP.TITLE_ACTIVITY_TYPE, TitleWithContentActivity.TYPE_MINE_COLLECT)
-//                )
-//
-//            }
-//            R.id.mine_integral_row ->{
-//
-//                it.context.startActivity<TitleWithContentActivity>(
-//                    Pair(Constants.SP.TITLE_ACTIVITY_TYPE, TitleWithContentActivity.TYPE_MINE_INTEGRAL)
-//                )
-//
-//
-//            }
-//            R.id.mine_rank_row ->{
-//                it.context.startActivity<TitleWithContentActivity>(
-//                    Pair(Constants.SP.TITLE_ACTIVITY_TYPE, TitleWithContentActivity.TYPE_MINE_INTEGRAL_RANK)
-//                )
-//
-//            }
-//            R.id.mine_setting_row ->{
-//                it.context.startActivity<TitleWithContentActivity>(
-//                    Pair(Constants.SP.TITLE_ACTIVITY_TYPE, TitleWithContentActivity.TYPE_MINE_INTEGRAL_SETTING)
-//                )
-//            }
-//
-//            R.id.setting_row ->{
-//
-//                AlertDialog.Builder(it.context)
-//                    .setTitle("确认退出")
-//                    .setMessage("手滑了一下下~")
-//                    .setPositiveButton("确定") { _, _ -> logout(it.context) }
-//                    .setNegativeButton("取消") { dialog, _ -> dialog.dismiss() }
-//                    .show()
-//
-//
-//            }
-//        }
+            R.id.top_relative ->{
+
+                if (checkIsLogin(it.context)) return@OnClickListener
+
+                MyARouter.openActivity(Constants.Page.ACTIVITY_LOGIN)
+
+            }
+
+            R.id.mine_collect_row ->{
+                if (!checkIsLogin(it.context)) return@OnClickListener
+
+
+                MyARouter.openActivity(
+                    Constants.Page.ACTIVITY_COMMON, CommonActivity.TYPE_FRAGMENT_MINE_COLLECT)
+
+
+            }
+            R.id.mine_integral_row ->{
+                if (!checkIsLogin(it.context)) return@OnClickListener
+
+                MyARouter.openActivity(
+                    Constants.Page.ACTIVITY_COMMON, CommonActivity.TYPE_FRAGMENT_MINE_INTEGRAL)
+
+
+
+            }
+            R.id.mine_rank_row ->{
+                if (!checkIsLogin(it.context)) return@OnClickListener
+
+                MyARouter.openActivity(
+                    Constants.Page.ACTIVITY_COMMON, CommonActivity.TYPE_FRAGMENT_MINE_RANK)
+
+
+
+            }
+            R.id.mine_setting_row ->{
+                if (!checkIsLogin(it.context)) return@OnClickListener
+
+                MyARouter.openActivity(
+                    Constants.Page.ACTIVITY_COMMON, CommonActivity.TYPE_FRAGMENT_MINE_SETTING)
+
+            }
+
+            R.id.setting_row ->{
+
+                AlertDialog.Builder(it.context)
+                    .setTitle("确认退出")
+                    .setMessage("手滑了一下下~")
+                    .setPositiveButton("确定") { _, _ -> logout(it.context) }
+                    .setNegativeButton("取消") { dialog, _ -> dialog.dismiss() }
+                    .show()
+
+
+            }
+        }
 
     }
 

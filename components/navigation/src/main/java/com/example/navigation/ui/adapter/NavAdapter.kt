@@ -5,6 +5,9 @@ import android.view.View
 import android.widget.TextView
 import com.chad.library.adapter.base.BaseQuickAdapter
 import com.chad.library.adapter.base.BaseViewHolder
+import com.example.commonlibrary.router.MyARouter
+import com.example.commonlibrary.ui.CommonActivity
+import com.example.commonlibrary.util.Constants
 import com.example.navigation.R
 import com.example.navigation.entity.NavArticleBean
 import com.zhy.view.flowlayout.FlowLayout
@@ -43,14 +46,14 @@ class NavAdapter : BaseQuickAdapter<NavArticleBean.dataBean,BaseViewHolder>(R.la
 
             }
 
-        //todo
         tagLayout.setOnTagClickListener { view, position, parent ->
 
-//            view.context.startActivity<TitleWithContentActivity>(
-//                Pair(Constants.SP.TITLE_ACTIVITY_TYPE, TitleWithContentActivity.TYPE_WEB_VIEW),
-//                Pair(Constants.SP.URL, item.articles!![position].link),
-//                Pair(Constants.SP.WEBVIEW_TITLE,item.articles!![position].title)
-//            )
+            MyARouter.openActivity(
+                Constants.Page.ACTIVITY_COMMON,
+                CommonActivity.TYPE_WEB_VIEW,
+                item.articles!![position].link!!,
+                item.articles!![position].title!!)
+
             false
         }
     }

@@ -5,7 +5,9 @@ import android.view.View
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
 import androidx.recyclerview.widget.LinearLayoutManager
+import com.alibaba.android.arouter.facade.annotation.Route
 import com.example.commonlibrary.base.BaseMVVMFragment
+import com.example.commonlibrary.util.Constants
 import com.example.mine.R
 import com.example.mine.databinding.MineFragmentIntegralBinding
 import com.example.mine.ui.MineRepository
@@ -21,7 +23,7 @@ import kotlinx.android.synthetic.main.mine_fragment_integral.*
  *
  */
 
-
+@Route(path = Constants.Page.FRAGMENT_MINE_INTEGRAL)
 class IntegralFragment : BaseMVVMFragment<MineFragmentIntegralBinding, MineViewModel>() {
 
     val integralAdapter = IntegralAdapter()

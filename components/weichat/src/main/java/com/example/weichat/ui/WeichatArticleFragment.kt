@@ -7,6 +7,9 @@ import androidx.lifecycle.ViewModelProvider
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.commonlibrary.adapter.CommonArticleAdapter
 import com.example.commonlibrary.base.BaseMVVMFragment
+import com.example.commonlibrary.router.MyARouter
+import com.example.commonlibrary.ui.CommonActivity
+import com.example.commonlibrary.util.Constants
 import com.example.weichat.R
 import com.example.weichat.databinding.FragmentOfficialAccountArticleBinding
 import kotlinx.android.synthetic.main.fragment_official_account_article.*
@@ -72,14 +75,14 @@ class WeichatArticleFragment : BaseMVVMFragment<FragmentOfficialAccountArticleBi
 
             }
 
-            //todo
             override fun onItemClick(view: View, name: String?, id: Int?, link: String?, title: String?) {
 
-//                    view.context.startActivity<TitleWithContentActivity>(
-//                        Pair(Constants.SP.TITLE_ACTIVITY_TYPE, TitleWithContentActivity.TYPE_WEB_VIEW),
-//                        Pair(Constants.SP.URL,link),
-//                        Pair(Constants.SP.WEBVIEW_TITLE,title)
-//                    )
+                MyARouter.openActivity(
+                    Constants.Page.ACTIVITY_COMMON,
+                    CommonActivity.TYPE_WEB_VIEW,
+                    link!!,
+                    title!!)
+
                 }
             })
     }
