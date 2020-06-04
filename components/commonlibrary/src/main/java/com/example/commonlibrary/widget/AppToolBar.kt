@@ -142,7 +142,7 @@ class AppToolBar : RelativeLayout {
         backgroundColor = Color.WHITE
     }
 
-    fun setTitle(text: String) {
+    fun setTitle(text: String?) {
         title.text = text
     }
 

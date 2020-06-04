@@ -4,9 +4,6 @@ apply plugin: 'kotlin-android-extensions'
 
 apply plugin: 'kotlin-kapt'
 
-Properties properties = new Properties()
-InputStream inputStream = rootProject.file('local.properties').newDataInputStream()
-properties.load(inputStream)
 
 android {
     compileSdkVersion deps.androidx.compileSdkVersion

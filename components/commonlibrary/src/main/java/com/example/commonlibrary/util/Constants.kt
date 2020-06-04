@@ -22,14 +22,14 @@ object Constants {
      */
     object SP {
         //TitleWithContentActivity内容的类型
-        const val TITLE_ACTIVITY_TYPE = "content_type"
+        const val TITLE_ACTIVITY_TYPE = "type"
+        const val PAGE_TITLE = "PAGE_TITLE"
+        const val PAGE_URL = "PAGE_URL"
         //用户是否登陆
         const val IS_LOGIN = "is_login"
         //Token
         const val TOKEN = "token"
         //
-        const val URL = "url"
-        const val WEBVIEW_TITLE = "webview_title"
         const val AUTHOR_ID = "user_id"
         const val AUTHOR_NAME = "user_name"
         const val ARTICLE_TITLE = "article_title"
@@ -51,11 +51,13 @@ object Constants {
      */
     object DATA {
 
-        const val LOGIN_FAIL = -1001
+        const val LOGIN_FAIL =         -1001
     }
 
 
     object Page {
+
+        const val ACTIVITY_COMMON = "/CommonActivity/commonlibrary"
 
         const val FRAGMENT_HOME = "/home/HomeFragment"
         const val FRAGMENT_KNOWLEDGE = "/knowledge/KnowledgeFragment"

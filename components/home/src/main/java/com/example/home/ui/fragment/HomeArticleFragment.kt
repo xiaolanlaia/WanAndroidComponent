@@ -13,6 +13,9 @@ import com.example.home.ui.HomeRepository
 import com.example.home.ui.HomeVMFactory
 import com.example.home.ui.HomeViewModel
 import com.example.commonlibrary.adapter.CommonArticleAdapter
+import com.example.commonlibrary.router.MyARouter
+import com.example.commonlibrary.ui.CommonActivity
+import com.example.commonlibrary.util.Constants
 import com.youth.banner.BannerConfig
 import com.youth.banner.Transformer
 import kotlinx.android.synthetic.main.home_fragment_article.*
@@ -74,11 +77,7 @@ class HomeArticleFragment : BaseMVVMFragment<HomeFragmentArticleBinding, HomeVie
         //todo
         home_banner.setOnBannerListener { position ->
 
-//            startActivity<TitleWithContentActivity>(
-//                Pair(Constants.SP.TITLE_ACTIVITY_TYPE,TitleWithContentActivity.TYPE_WEB_VIEW),
-//                Pair(Constants.SP.URL,urls[position]),
-//                Pair(Constants.SP.WEBVIEW_TITLE,titles[position])
-//            )
+            MyARouter.openActivity(Constants.Page.ACTIVITY_COMMON,CommonActivity.TYPE_WEB_VIEW,urls[position],titles[position])
 
         }
 

@@ -74,8 +74,9 @@ dependencies {
     api deps.dependencies.lifecycle_extensions
 
 
-
     api deps.dependencies.arouter_api
+    implementation 'androidx.appcompat:appcompat:1.1.0'
+    implementation 'androidx.constraintlayout:constraintlayout:1.1.3'
     kapt deps.dependencies.arouter_compiler
 
 
