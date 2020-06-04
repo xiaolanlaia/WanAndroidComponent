@@ -3,6 +3,7 @@ package com.example.commonlibrary.ui
 import com.alibaba.android.arouter.facade.annotation.Route
 import com.example.commonlibrary.R
 import com.example.commonlibrary.base.BaseActivity
+import com.example.commonlibrary.router.MyARouter
 import com.example.commonlibrary.util.Constants
 import kotlinx.android.synthetic.main.activity_common.*
 
@@ -40,6 +41,7 @@ class CommonActivity : BaseActivity() {
 
 
         val transaction = supportFragmentManager.beginTransaction()
+        val id = intent.getIntExtra(Constants.SP.ID,0)
 
         when(type){
 
@@ -47,6 +49,21 @@ class CommonActivity : BaseActivity() {
             TYPE_WEB_VIEW ->{
 
                 transaction.replace(R.id.info_content, WebFragment.newInstance(url)).commit()
+            }
+
+            TYPE_ARTICLE_SORT_FRAGMENT ->{
+
+
+
+                val articleSortFragment = MyARouter.getFragment(Constants.Page.FRAGMENT_ARTICLE_SORT,intent.getStringExtra(Constants.SP.PAGE_TITLE),id)
+                transaction.replace(R.id.info_content, articleSortFragment).commit()
+            }
+
+            TYPE_AUTHOR_ARTICLE_FRAGMENT ->{
+
+                val authorArticleFragment = MyARouter.getFragment(Constants.Page.FRAGMENT_AUTHOR_ARTICLE, intent.getStringExtra(Constants.SP.PAGE_TITLE))
+                transaction.replace(R.id.info_content, authorArticleFragment).commit()
+
             }
         }
     }
@@ -58,6 +75,8 @@ class CommonActivity : BaseActivity() {
     companion object {
 
         const val TYPE_WEB_VIEW = 0
+        const val TYPE_ARTICLE_SORT_FRAGMENT = 1
+        const val TYPE_AUTHOR_ARTICLE_FRAGMENT = 2
 
 
     }

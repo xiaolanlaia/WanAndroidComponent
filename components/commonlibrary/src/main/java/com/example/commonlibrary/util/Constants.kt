@@ -25,6 +25,8 @@ object Constants {
         const val TITLE_ACTIVITY_TYPE = "type"
         const val PAGE_TITLE = "PAGE_TITLE"
         const val PAGE_URL = "PAGE_URL"
+        const val NAME = "NAME"
+        const val ID = "ID"
         //用户是否登陆
         const val IS_LOGIN = "is_login"
         //Token
@@ -64,6 +66,10 @@ object Constants {
         const val FRAGMENT_WEICHAT = "/weichat/WeichatFragment"
         const val FRAGMENT_NAVIGATION = "/navigation/NavigationFragment"
         const val FRAGMENT_MINE = "/mine/MineFragment"
+
+
+        const val FRAGMENT_ARTICLE_SORT = "/ArticleSortFragment/userarticles"
+        const val FRAGMENT_AUTHOR_ARTICLE = "/AuthorArticleFragment/userarticles"
 
 
     }

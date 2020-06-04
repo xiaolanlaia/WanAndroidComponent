@@ -5,6 +5,7 @@ import android.view.View
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
 import androidx.recyclerview.widget.LinearLayoutManager
+import com.alibaba.android.arouter.facade.annotation.Route
 import com.example.commonlibrary.adapter.CommonArticleAdapter
 import com.example.commonlibrary.base.BaseMVVMFragment
 import com.example.commonlibrary.util.Constants
@@ -19,7 +20,7 @@ import kotlinx.android.synthetic.main.fragment_author_article.*
  *
  */
 
-
+@Route(path = Constants.Page.FRAGMENT_AUTHOR_ARTICLE)
 class AuthorArticleFragment : BaseMVVMFragment<FragmentAuthorArticleBinding, AuthorArticleViewModel>() {
 
     companion object{
@@ -94,7 +95,7 @@ class AuthorArticleFragment : BaseMVVMFragment<FragmentAuthorArticleBinding, Aut
 
     fun initRequest(){
 
-        vm.getAuthorFromNickName(arguments!!.getString(Constants.SP.AUTHOR_NAME,""))
+        vm.getAuthorFromNickName(arguments!!.getString(Constants.SP.PAGE_TITLE,""))
 //        vm.getAuthorArticleList(arguments!!.getInt(Constants.SP.AUTHOR_ID,-1))
 
     }

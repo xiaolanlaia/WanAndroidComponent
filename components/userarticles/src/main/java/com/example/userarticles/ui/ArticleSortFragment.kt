@@ -5,6 +5,7 @@ import android.view.View
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
 import androidx.recyclerview.widget.LinearLayoutManager
+import com.alibaba.android.arouter.facade.annotation.Route
 import com.example.commonlibrary.adapter.CommonArticleAdapter
 import com.example.commonlibrary.base.BaseMVVMFragment
 import com.example.commonlibrary.util.Constants
@@ -19,21 +20,9 @@ import kotlinx.android.synthetic.main.fragment_author_article.*
  *
  */
 
-
+@Route(path = Constants.Page.FRAGMENT_ARTICLE_SORT)
 class ArticleSortFragment : BaseMVVMFragment<FragmentAuthorArticleBinding, AuthorArticleViewModel>() {
 
-    companion object{
-
-
-        fun newInstance(cid : Int) : ArticleSortFragment {
-
-            val fragment = ArticleSortFragment()
-            val bundle = Bundle()
-            bundle.putInt(Constants.SP.CID,cid)
-            fragment.arguments = bundle
-            return fragment
-        }
-    }
     override fun initViewModel(): AuthorArticleViewModel =
         ViewModelProvider(this, AuthorArticleVMFactory(AuthorArticleRepository())).get(
             AuthorArticleViewModel::class.java)
@@ -98,7 +87,7 @@ class ArticleSortFragment : BaseMVVMFragment<FragmentAuthorArticleBinding, Autho
     fun initRequest(){
 
 
-        vm.getArticleSort(arguments!!.getInt(Constants.SP.CID,-1))
+        vm.getArticleSort(arguments!!.getInt(Constants.SP.ID,-1))
 
     }
 }

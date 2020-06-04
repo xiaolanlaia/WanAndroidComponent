@@ -7,7 +7,6 @@ import androidx.lifecycle.ViewModelProvider
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.commonlibrary.base.BaseMVVMFragment
 import com.example.commonlibrary.util.GlideImageLoader
-import com.example.home.R
 import com.example.home.databinding.HomeFragmentArticleBinding
 import com.example.home.ui.HomeRepository
 import com.example.home.ui.HomeVMFactory
@@ -16,9 +15,11 @@ import com.example.commonlibrary.adapter.CommonArticleAdapter
 import com.example.commonlibrary.router.MyARouter
 import com.example.commonlibrary.ui.CommonActivity
 import com.example.commonlibrary.util.Constants
+import com.example.home.R
 import com.youth.banner.BannerConfig
 import com.youth.banner.Transformer
 import kotlinx.android.synthetic.main.home_fragment_article.*
+import kotlinx.android.synthetic.main.home_fragment_recycler_item.*
 
 /**
  *  @author  xiaolanlaia
@@ -74,7 +75,6 @@ class HomeArticleFragment : BaseMVVMFragment<HomeFragmentArticleBinding, HomeVie
 
         })
 
-        //todo
         home_banner.setOnBannerListener { position ->
 
             MyARouter.openActivity(Constants.Page.ACTIVITY_COMMON,CommonActivity.TYPE_WEB_VIEW,urls[position],titles[position])
@@ -116,34 +116,25 @@ class HomeArticleFragment : BaseMVVMFragment<HomeFragmentArticleBinding, HomeVie
 
             override fun onItemClick(view: View, name: String?, id: Int?, link: String?, title: String?) {
 
-                //todo
-//                when(view.id){
-//
-//                    article_chapter.id ->{
-//                        view.context.startActivity<TitleWithContentActivity>(
-//                            Pair(Constants.SP.TITLE_ACTIVITY_TYPE, TitleWithContentActivity.TYPE_ARTICLE_SORT_LIST),
-//                            Pair(Constants.SP.ARTICLE_TITLE,name),
-//                            Pair(Constants.SP.CID,id)
-//                        )
-//                    }
-//                    article_author.id ->{
-//
-//                        view.context.startActivity<TitleWithContentActivity>(
-//                            Pair(Constants.SP.TITLE_ACTIVITY_TYPE, TitleWithContentActivity.TYPE_USER_ARTICLE_LIST),
-//                            Pair(Constants.SP.AUTHOR_NAME,name),
-//                            Pair(Constants.SP.AUTHOR_ID,id)
-//                        )
-//                    }
-//
-//                    article_layout.id ->{
-//                        view.context.startActivity<TitleWithContentActivity>(
-//                            Pair(Constants.SP.TITLE_ACTIVITY_TYPE, TitleWithContentActivity.TYPE_WEB_VIEW),
-//                            Pair(Constants.SP.URL,link),
-//                            Pair(Constants.SP.WEBVIEW_TITLE,title)
-//                        )
-//                    }
-//
-//                }
+                when(view.id){
+
+                    article_chapter.id ->{
+
+                        MyARouter.openActivity(Constants.Page.ACTIVITY_COMMON,CommonActivity.TYPE_ARTICLE_SORT_FRAGMENT,name,id!!)
+
+                    }
+                    article_author.id ->{
+
+                        MyARouter.openActivity(Constants.Page.ACTIVITY_COMMON,CommonActivity.TYPE_AUTHOR_ARTICLE_FRAGMENT,name,id!!)
+
+                    }
+
+                    article_layout.id ->{
+                        MyARouter.openActivity(Constants.Page.ACTIVITY_COMMON,CommonActivity.TYPE_WEB_VIEW,link!!,title!!)
+
+                    }
+
+                }
 
             }
 
