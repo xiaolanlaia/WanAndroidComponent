@@ -89,7 +89,7 @@
                     android:layout_height="?attr/actionBarSize"
                     android:layout_marginTop="1dp"
                     app:image_left="@mipmap/icon_mine_heart"
-                    app:row_title_text="我的收藏"
+                    app:row_title_text="@string/mine_title_collect"
                     android:onClick="@{vm.mineClickListener}"
             />
             <com.example.commonlibrary.widget.AppRowLayout
@@ -98,7 +98,7 @@
                     android:layout_height="?attr/actionBarSize"
                     android:layout_marginTop="1dp"
                     app:image_left="@mipmap/icon_integral"
-                    app:row_title_text="我的积分"
+                    app:row_title_text="@string/mine_title_integral"
                     android:onClick="@{vm.mineClickListener}"
             />
             <com.example.commonlibrary.widget.AppRowLayout
@@ -107,7 +107,7 @@
                     android:layout_height="?attr/actionBarSize"
                     android:layout_marginTop="1dp"
                     app:image_left="@mipmap/icon_rank"
-                    app:row_title_text="积分排行榜"
+                    app:row_title_text="@string/mine_title_rank"
                     android:onClick="@{vm.mineClickListener}"
             />
             <com.example.commonlibrary.widget.AppRowLayout
@@ -116,7 +116,7 @@
                     android:layout_height="?attr/actionBarSize"
                     android:layout_marginTop="1dp"
                     app:image_left="@mipmap/icon_setting"
-                    app:row_title_text="设置"
+                    app:row_title_text="@string/mine_title_setting"
                     android:onClick="@{vm.mineClickListener}"
             />
         </LinearLayout>

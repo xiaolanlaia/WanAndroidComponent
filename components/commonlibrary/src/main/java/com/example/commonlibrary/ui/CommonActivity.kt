@@ -68,6 +68,7 @@ class CommonActivity : BaseActivity() {
             }
 
             TYPE_FRAGMENT_MINE_COLLECT ->{
+                info_toolbar.setTitle(getString(R.string.mine_title_collect))
 
                 val collectFragment =  MyARouter.getFragment(Constants.Page.FRAGMENT_MINE_COLLECT)
                 transaction.replace(R.id.info_content, collectFragment).commit()
@@ -76,6 +77,7 @@ class CommonActivity : BaseActivity() {
 
 
             TYPE_FRAGMENT_MINE_INTEGRAL ->{
+                info_toolbar.setTitle(getString(R.string.mine_title_integral))
 
                 val integralFragment =  MyARouter.getFragment(Constants.Page.FRAGMENT_MINE_INTEGRAL)
                 transaction.replace(R.id.info_content, integralFragment).commit()
@@ -84,6 +86,7 @@ class CommonActivity : BaseActivity() {
 
             TYPE_FRAGMENT_MINE_RANK ->{
 
+                info_toolbar.setTitle(getString(R.string.mine_title_rank))
                 val rankFragment =  MyARouter.getFragment(Constants.Page.FRAGMENT_MINE_RANK)
                 transaction.replace(R.id.info_content, rankFragment).commit()
             }
@@ -91,6 +94,7 @@ class CommonActivity : BaseActivity() {
 
             TYPE_FRAGMENT_MINE_SETTING ->{
 
+                info_toolbar.setTitle(getString(R.string.mine_title_setting))
                 val settingFragment =  MyARouter.getFragment(Constants.Page.FRAGMENT_MINE_SETTING)
                 transaction.replace(R.id.info_content, settingFragment).commit()
             }
