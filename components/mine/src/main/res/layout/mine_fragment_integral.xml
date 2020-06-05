@@ -5,10 +5,11 @@
         <variable name="vm" type="com.example.mine.ui.MineViewModel"/>
     </data>
     <LinearLayout
-            android:orientation="vertical"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent">
-
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/color_white"
+        >
         <TextView
                 android:id="@+id/integral_null"
                 android:text="无"
