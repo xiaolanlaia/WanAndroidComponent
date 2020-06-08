@@ -1,7 +1,10 @@
 package com.example.commonlibrary.net
 
 import com.example.commonlibrary.cookie.CookieManager
+import com.example.commonlibrary.entity.BaseBean
 import com.example.commonlibrary.util.Constants
+import com.example.commonlibrary.util.doInBackground
+import io.reactivex.Observable
 import okhttp3.*
 import okhttp3.logging.HttpLoggingInterceptor
 import retrofit2.Retrofit
@@ -56,6 +59,24 @@ object RetrofitManager  {
         fun getRequestBody(str: String): RequestBody {
             return RequestBody.create(MediaType.parse("application/json; charset=utf-8"), str)
         }
+
+
+    val apiService  = getRetrofit().create(ApiService::class.java)
+
+    /**
+     * 收藏
+     */
+    fun collect(id : Int) : Observable<BaseBean> {
+
+        return apiService.collect(id).doInBackground()
+    }
+    /**
+     * 取消收藏
+     */
+    fun unCollect(id : Int) : Observable<BaseBean> {
+
+        return apiService.unCollect(id).doInBackground()
+    }
 
 
 }

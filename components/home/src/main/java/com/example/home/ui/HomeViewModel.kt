@@ -3,6 +3,7 @@ package com.example.home.ui
 import android.content.Context
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
+import com.example.commonlibrary.commoninterface.CollectInterface
 import com.example.commonlibrary.util.CodeUtil.checkIsLogin
 import com.example.commonlibrary.util.Constants
 import com.example.commonlibrary.util.addTo
@@ -123,7 +124,7 @@ class HomeViewModel(val repository: HomeRepository) : ViewModel() {
             when(it.errorCode){
 
                 0 ->{
-                    setCollectState.onCollect(true)
+                    CollectInterface.collectStateListenerInstance.setCollectState(true)
                 }
             }
 
@@ -143,7 +144,7 @@ class HomeViewModel(val repository: HomeRepository) : ViewModel() {
             when(it.errorCode){
 
                 0 ->{
-                    setCollectState.onCollect(false)
+                    CollectInterface.collectStateListenerInstance.setCollectState(false)
                 }
             }
 
@@ -153,19 +154,6 @@ class HomeViewModel(val repository: HomeRepository) : ViewModel() {
         }).addTo(co)
     }
 
-    companion object{
-        lateinit var setCollectState : SetCollectState
-
-        fun collectListener(setCollectState: SetCollectState){
-
-            Companion.setCollectState = setCollectState
-        }
-
-        interface SetCollectState{
-
-            fun onCollect(isCollect : Boolean)
-        }
-    }
 
 
 

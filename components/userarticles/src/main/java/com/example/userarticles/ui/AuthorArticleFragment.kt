@@ -53,19 +53,19 @@ class AuthorArticleFragment : BaseMVVMFragment<FragmentAuthorArticleBinding, Aut
         //设置layoutManager
         author_article_recycler.layoutManager = LinearLayoutManager(context)
 
-        val homeArticleAdapter = CommonArticleAdapter()
-        author_article_recycler.adapter = homeArticleAdapter
+        val commonArticleAdapter = CommonArticleAdapter()
+        author_article_recycler.adapter = commonArticleAdapter
 
 
 
 
         vm.articleList.observe(viewLifecycleOwner, Observer {
 
-            homeArticleAdapter.replaceData(it)
+            commonArticleAdapter.replaceData(it)
 
         })
 
-        homeArticleAdapter.setOnItemClickListener(object : CommonArticleAdapter.OnItemClickListener {
+        commonArticleAdapter.setOnItemClickListener(object : CommonArticleAdapter.OnItemClickListener {
             override fun onItemClick(id: Int, collect: Boolean) {
 
                 when (collect) {

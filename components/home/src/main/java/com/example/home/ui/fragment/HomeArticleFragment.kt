@@ -81,22 +81,22 @@ class HomeArticleFragment : BaseMVVMFragment<HomeFragmentArticleBinding, HomeVie
 
         }
 
-        val homeAdapter = CommonArticleAdapter()
+        val commonArticleAdapter = CommonArticleAdapter()
         //设置layoutManager
         home_article_recycler.layoutManager = LinearLayoutManager(context)
-        home_article_recycler.adapter = homeAdapter
+        home_article_recycler.adapter = commonArticleAdapter
 
 
         vm.articleList.observe(viewLifecycleOwner, Observer {
 
-            homeAdapter.replaceData(it)
+            commonArticleAdapter.replaceData(it)
 
 
 
         })
 
 
-        homeAdapter.setOnItemClickListener(object: CommonArticleAdapter.OnItemClickListener {
+        commonArticleAdapter.setOnItemClickListener(object: CommonArticleAdapter.OnItemClickListener {
             override fun onItemClick(id: Int, collect : Boolean) {
 
                 when(collect){
@@ -146,5 +146,12 @@ class HomeArticleFragment : BaseMVVMFragment<HomeFragmentArticleBinding, HomeVie
         vm.getHomeArticleList()
 
     }
+
+    override fun onResume() {
+        super.onResume()
+        vm.getHomeArticleList()
+
+    }
+
 
 }
