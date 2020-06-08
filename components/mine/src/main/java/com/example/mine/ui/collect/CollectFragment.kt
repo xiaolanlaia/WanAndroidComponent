@@ -47,10 +47,10 @@ class CollectFragment : BaseMVVMFragment<MineFragmentCollectBinding, MineViewMod
     fun initData(){
 
 
-        val homeArticleAdapter = CommonArticleAdapter()
+        val commonArticleAdapter = CommonArticleAdapter()
         //设置layoutManager
         collect_article_recycler.layoutManager = LinearLayoutManager(context)
-        collect_article_recycler.adapter = homeArticleAdapter
+        collect_article_recycler.adapter = commonArticleAdapter
 
 
         vm.collectList.observe(viewLifecycleOwner, Observer {
@@ -62,14 +62,14 @@ class CollectFragment : BaseMVVMFragment<MineFragmentCollectBinding, MineViewMod
                 }
 
                 else ->{
-                    homeArticleAdapter.replaceData(it)
+                    commonArticleAdapter.replaceData(it)
 
                 }
             }
 
         })
 
-        homeArticleAdapter.setOnItemClickListener(object: CommonArticleAdapter.OnItemClickListener {
+        commonArticleAdapter.setOnItemClickListener(object: CommonArticleAdapter.OnItemClickListener {
 
 
             override fun onItemClick(id: Int, collect: Boolean) {
