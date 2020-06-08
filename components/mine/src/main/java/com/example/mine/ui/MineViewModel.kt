@@ -8,6 +8,7 @@ import androidx.appcompat.app.AlertDialog
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import com.example.commonlibrary.CommonApplication.Companion.commonContext
+import com.example.commonlibrary.commoninterface.CollectInterface
 import com.example.commonlibrary.cookie.CookieManager
 import com.example.commonlibrary.entity.ArticleBean
 import com.example.commonlibrary.router.MyARouter
@@ -250,8 +251,7 @@ class MineViewModel(val repository: MineRepository) : ViewModel() {
             when(it.errorCode){
 
                 0 ->{
-                    //todo
-//                    setCollectState.onCollect(true)
+                    CollectInterface.collectStateListenerInstance.setCollectState(false)
                 }
             }
 
@@ -271,8 +271,7 @@ class MineViewModel(val repository: MineRepository) : ViewModel() {
             when(it.errorCode){
 
                 0 ->{
-                    //todo
-//                    setCollectState.onCollect(false)
+                    CollectInterface.collectStateListenerInstance.setCollectState(false)
                 }
             }
 

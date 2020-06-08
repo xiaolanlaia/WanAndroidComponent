@@ -2,6 +2,7 @@ package com.example.userarticles.ui
 
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
+import com.example.commonlibrary.commoninterface.CollectInterface
 import com.example.commonlibrary.entity.ArticleBean
 import com.example.commonlibrary.util.addTo
 import io.reactivex.disposables.CompositeDisposable
@@ -78,8 +79,7 @@ class AuthorArticleViewModel(val repository: AuthorArticleRepository) : ViewMode
             when(it.errorCode){
 
                 0 ->{
-                    //todo
-//                    setCollectState.onCollect(true)
+                    CollectInterface.collectStateListenerInstance.setCollectState(false)
                 }
             }
 
@@ -99,8 +99,7 @@ class AuthorArticleViewModel(val repository: AuthorArticleRepository) : ViewMode
             when(it.errorCode){
 
                 0 ->{
-                    //todo
-//                    setCollectState.onCollect(true)
+                    CollectInterface.collectStateListenerInstance.setCollectState(false)
                 }
             }
 

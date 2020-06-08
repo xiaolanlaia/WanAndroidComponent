@@ -2,6 +2,7 @@ package com.example.weichat.ui
 
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
+import com.example.commonlibrary.commoninterface.CollectInterface
 import com.example.commonlibrary.entity.ArticleBean
 import com.example.commonlibrary.util.addTo
 import com.example.weichat.entity.OfficialAccountBean
@@ -69,8 +70,7 @@ class WeichatViewModel(val repository: WeichatRepository) : ViewModel() {
             when(it.errorCode){
 
                 0 ->{
-                    //todo
-//                    HomeViewModel.setCollectState.onCollect(true)
+                    CollectInterface.collectStateListenerInstance.setCollectState(false)
                 }
             }
 
@@ -90,8 +90,7 @@ class WeichatViewModel(val repository: WeichatRepository) : ViewModel() {
             when(it.errorCode){
 
                 0 ->{
-                    //todo
-//                    HomeViewModel.setCollectState.onCollect(false)
+                    CollectInterface.collectStateListenerInstance.setCollectState(false)
                 }
             }
 
