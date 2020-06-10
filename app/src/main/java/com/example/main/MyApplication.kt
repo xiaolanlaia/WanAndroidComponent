@@ -1,4 +1,4 @@
-package com.example.knowledge
+package com.example.main
 
 import com.example.commonlibrary.CommonApplication
 
