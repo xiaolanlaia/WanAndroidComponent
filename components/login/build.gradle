@@ -1,4 +1,4 @@
-if (isRunLogin.toBoolean()) { // 1.根据之前设定的isRunHome，判断是否需要独立运行
+if (isRunModule.toBoolean()) {
     apply plugin: 'com.android.application'
 } else {
     apply plugin: 'com.android.library'
@@ -14,7 +14,7 @@ android {
     compileSdkVersion deps.androidx.compileSdkVersion
 
     defaultConfig {
-        if (isRunLogin.toBoolean()) { // 2.这里也设置一下，可运行的话，添加applicationId
+        if (isRunModule.toBoolean()) { // 2.这里也设置一下，可运行的话，添加applicationId
 
             applicationId "com.example.login"
         }
@@ -74,7 +74,7 @@ dependencies {
     android {
         sourceSets {
             main {
-                if (isRunLogin.toBoolean()) {
+                if (isRunModule.toBoolean()) {
                     manifest.srcFile 'src/main/manifest/AndroidManifest.xml'
                 } else {
                     manifest.srcFile 'src/main/AndroidManifest.xml'

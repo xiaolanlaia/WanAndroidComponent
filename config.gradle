@@ -1,12 +1,7 @@
 
 ext{// true : 模块可单独运行
-    isRunLogin=false
-    isRunHome=false
-    isRunKnowledge=false
-    isRunMine=false
-    isRunNavigation=false
-    isRunWeichat=false
-    isRunUserArticle=false
+
+    isRunModule = false
 
 }
 

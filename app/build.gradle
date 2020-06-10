@@ -63,27 +63,18 @@ dependencies {
 
 
     // 1.如果要独立运行，那么主工程不加载它
-    if (!isRunLogin.toBoolean()) {
+
+    if (!isRunModule.toBoolean()) {
         implementation project(path: ':login')
-    }
-    if (!isRunHome.toBoolean()) {
+        implementation project(path: ':login')
         implementation project(path: ':home')
-    }
-    if (!isRunKnowledge.toBoolean()) {
         implementation project(path: ':knowledge')
-    }
-    if (!isRunMine.toBoolean()) {
         implementation project(path: ':mine')
-    }
-    if (!isRunNavigation.toBoolean()) {
         implementation project(path: ':navigation')
-    }
-    if (!isRunWeichat.toBoolean()) {
         implementation project(path: ':weichat')
-    }
-    if (!isRunUserArticle.toBoolean()) {
         implementation project(path: ':userarticles')
     }
+
 
 
 
