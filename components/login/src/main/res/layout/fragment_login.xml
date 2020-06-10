@@ -30,7 +30,7 @@
             <EditText
                 android:id="@+id/login_phone"
                 android:text="@{vm.phone}"
-                android:hint="请输入账号"
+                android:hint="@string/account_hint"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:drawableStart="@mipmap/icon_phone"
@@ -58,7 +58,7 @@
                 android:layout_height="wrap_content"
                 android:drawableStart="@mipmap/icon_password"
                 android:drawablePadding="@dimen/dp_20"
-                android:hint="请输入密码"
+                android:hint="@string/secret_hint"
                 android:imeOptions="actionGo"
                 android:text="@{vm.password}"
                 app:addTextChangedListener="@{vm.passwordTextAfterChange}" />
@@ -75,7 +75,7 @@
 
             <TextView
                 android:id="@+id/to_logon"
-                android:text="注册"
+                android:text="@string/register"
                 android:gravity="center"
                 android:layout_width="0dp"
                 android:layout_weight="1"
@@ -89,7 +89,7 @@
 
             <TextView
                 android:id="@+id/login_in"
-                android:text="登录"
+                android:text="@string/login"
                 android:gravity="center"
                 android:layout_width="0dp"
                 android:layout_weight="1"

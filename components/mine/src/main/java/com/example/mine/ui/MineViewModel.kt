@@ -35,13 +35,13 @@ class MineViewModel(val repository: MineRepository) : ViewModel() {
 
     val co = CompositeDisposable()
 
-    var account = MutableLiveData<String>("点击登录")
+    var account = MutableLiveData<String>(commonContext.getString(R.string.click_to_login))
     var level = MutableLiveData<String>()
     var mineIntegral = MutableLiveData<String>()
 
 
     init {
-        account.value = SharedHelper.getShared().getString(Constants.SP.MINE_NAME,"点击登录")
+        account.value = SharedHelper.getShared().getString(Constants.SP.MINE_NAME,commonContext.getString(R.string.click_to_login))
         level.value = SharedHelper.getShared().getString(Constants.SP.MINE_LEVEL,"")
         mineIntegral.value = SharedHelper.getShared().getString(Constants.SP.MINE_INTEGRAL,"")
     }
@@ -100,10 +100,10 @@ class MineViewModel(val repository: MineRepository) : ViewModel() {
             R.id.setting_row ->{
 
                 AlertDialog.Builder(it.context)
-                    .setTitle("确认退出")
-                    .setMessage("手滑了一下下~")
-                    .setPositiveButton("确定") { _, _ -> logout(it.context) }
-                    .setNegativeButton("取消") { dialog, _ -> dialog.dismiss() }
+                    .setTitle(it.context.getString(R.string.confirm_logout))
+                    .setMessage(it.context.getString(R.string.logout_tip))
+                    .setPositiveButton(it.context.getString(R.string.logout_yes)) { _, _ -> logout(it.context) }
+                    .setNegativeButton(it.context.getString(R.string.logout_no)) { dialog, _ -> dialog.dismiss() }
                     .show()
 
 
@@ -133,7 +133,7 @@ class MineViewModel(val repository: MineRepository) : ViewModel() {
                 }
 
                 else ->{
-                    account.value = "点击登录"
+                    account.value = commonContext.getString(R.string.click_to_login)
                     level.value = ""
                     mineIntegral.value = ""
                 }
@@ -217,7 +217,7 @@ class MineViewModel(val repository: MineRepository) : ViewModel() {
             when(it.errorCode){
 
                 0 ->{
-                    toast(commonContext,"退出成功")
+                    toast(commonContext,commonContext.getString(R.string.logout_success))
                     deleteData()
                     SharedHelper.getEdit { sp -> sp.putBoolean(Constants.SP.IS_LOGIN,false) }
                     CookieManager.getInstance().clearAllCookie()
@@ -232,11 +232,11 @@ class MineViewModel(val repository: MineRepository) : ViewModel() {
 
 
     fun deleteData(){
-        SharedHelper.getEdit { sp -> sp.putString(Constants.SP.MINE_NAME,"点击登录") }
+        SharedHelper.getEdit { sp -> sp.putString(Constants.SP.MINE_NAME,commonContext.getString(R.string.click_to_login)) }
         SharedHelper.getEdit { sp -> sp.putString(Constants.SP.MINE_LEVEL,"") }
         SharedHelper.getEdit { sp -> sp.putString(Constants.SP.MINE_INTEGRAL,"") }
 
-        account.value = "点击登录"
+        account.value = commonContext.getString(R.string.click_to_login)
         level.value = ""
         mineIntegral.value = ""
     }

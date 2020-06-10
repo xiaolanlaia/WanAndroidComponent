@@ -40,33 +40,33 @@ class MainActivity : BaseActivity() {
 
         when (item.itemId) {
             R.id.nav_home -> {
-                setTitleText("首页")
+                setTitleText(getString(R.string.page_home))
                 mainFragmentManager!!.select(0)
                 return@OnNavigationItemSelectedListener true
             }
 
 
             R.id.nav_knowledge -> {
-                setTitleText("体系")
+                setTitleText(getString(R.string.page_system))
                 mainFragmentManager!!.select(1)
                 return@OnNavigationItemSelectedListener true
             }
 
             R.id.nav_official_account -> {
-                setTitleText("公众号")
+                setTitleText(getString(R.string.weichat_account))
                 mainFragmentManager!!.select(2)
                 return@OnNavigationItemSelectedListener true
 
             }
 
             R.id.nav_navigation -> {
-                setTitleText("导航")
+                setTitleText(getString(R.string.navigation))
                 mainFragmentManager!!.select(3)
                 return@OnNavigationItemSelectedListener true
             }
 
             R.id.nav_mine -> {
-                setTitleText("我的")
+                setTitleText(getString(R.string.mine))
                 mainFragmentManager!!.select(4)
                 return@OnNavigationItemSelectedListener true
             }

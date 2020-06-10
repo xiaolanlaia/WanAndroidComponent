@@ -12,7 +12,7 @@
         >
         <TextView
                 android:id="@+id/integral_null"
-                android:text="无"
+                android:text="@string/nothing"
                 android:textSize="@dimen/sp_20"
                 android:textColor="@color/color_black"
                 android:gravity="center"

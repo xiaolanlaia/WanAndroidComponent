@@ -10,7 +10,7 @@
             android:layout_height="match_parent">
         <TextView
                 android:id="@+id/collect_null"
-                android:text="无"
+                android:text="@string/nothing"
                 android:gravity="center"
                 android:textSize="@dimen/sp_20"
                 android:layout_width="match_parent"

@@ -14,7 +14,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="?attr/actionBarSize"
                 app:image_left="@mipmap/icon_logout"
-                app:row_title_text="退出登录"
+                app:row_title_text="@string/logout"
                 android:onClick="@{vm.mineClickListener}"
         />
 

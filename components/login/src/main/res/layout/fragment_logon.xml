@@ -25,7 +25,7 @@
             <EditText
                 android:id="@+id/logon_phone"
                 android:text="@{vm.phone}"
-                android:hint="请输入账号"
+                android:hint="@string/phone_hint"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:drawableStart="@mipmap/icon_phone"
@@ -47,7 +47,7 @@
             <EditText
                 android:id="@+id/logon_password"
                 android:text="@{vm.password}"
-                android:hint="请输入密码"
+                android:hint="@string/secret_hint"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:drawableStart="@mipmap/icon_password"
@@ -72,7 +72,7 @@
             <EditText
                 android:id="@+id/logon_repassword"
                 android:text="@{vm.logonRepassword}"
-                android:hint="请确认密码"
+                android:hint="@string/confirm_secret"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:drawableStart="@mipmap/icon_password"
@@ -94,7 +94,7 @@
 
             <TextView
                 android:id="@+id/logon"
-                android:text="注册并登录"
+                android:text="@string/register_and_login"
                 android:gravity="center"
                 android:layout_width="0dp"
                 android:layout_weight="1"

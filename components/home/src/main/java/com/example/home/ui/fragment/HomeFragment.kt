@@ -7,6 +7,7 @@ import androidx.fragment.app.FragmentManager
 import androidx.fragment.app.FragmentStatePagerAdapter
 import androidx.lifecycle.ViewModelProvider
 import com.alibaba.android.arouter.facade.annotation.Route
+import com.example.commonlibrary.CommonApplication.Companion.commonContext
 import com.example.commonlibrary.base.BaseMVVMFragment
 import com.example.commonlibrary.util.Constants
 import com.example.home.R
@@ -63,9 +64,9 @@ class HomeFragment : BaseMVVMFragment<HomeFragmentBinding, HomeViewModel>() {
 
         init {
 
-            titles.add("首页")
-            titles.add("广场")
-            titles.add("项目")
+            titles.add(commonContext.getString(R.string.page_home))
+            titles.add(commonContext.getString(R.string.page_square))
+            titles.add(commonContext.getString(R.string.page_project))
 
             fragments.add(HomeArticleFragment())
             fragments.add(HomeSecondFragment())

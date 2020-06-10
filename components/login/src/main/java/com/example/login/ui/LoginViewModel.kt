@@ -123,7 +123,7 @@ class LoginViewModel(val repository: LoginRepository) : ViewModel() {
     fun checkLoginEmpty(context: Context) : Boolean{
 
         if (TextUtils.isEmpty(phone.value) || TextUtils.isEmpty(password.value)) {
-            toast(context,"信息不能为空")
+            toast(context,context.getString(R.string.infomation_null))
             return false
         }
 
@@ -135,7 +135,7 @@ class LoginViewModel(val repository: LoginRepository) : ViewModel() {
      */
     fun checkLogonEmpty(context: Context) : Boolean{
         if (TextUtils.isEmpty(phone.value) || TextUtils.isEmpty(password.value) || TextUtils.isEmpty(logonRepassword.value)) {
-            toast(context,"信息不能为空")
+            toast(context,context.getString(R.string.infomation_null))
             return false
         }
 

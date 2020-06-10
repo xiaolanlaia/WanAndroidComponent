@@ -8,12 +8,14 @@ import android.text.*
 import android.view.*
 import android.widget.Toast
 import androidx.lifecycle.ViewModel
+import com.example.commonlibrary.R
 import io.reactivex.Observable
 import io.reactivex.android.schedulers.AndroidSchedulers
 import io.reactivex.disposables.CompositeDisposable
 import io.reactivex.disposables.Disposable
 import io.reactivex.schedulers.Schedulers
 import kotlinx.coroutines.*
+import org.jetbrains.anko.toast
 import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response
@@ -83,9 +85,8 @@ object CodeUtil {
     fun checkIsLogin(context: Context) : Boolean{
 
         if (!SharedHelper.getShared().getBoolean(Constants.SP.IS_LOGIN,false)){
-//            context.startActivity<TitleWithContentActivity>(
-//                Pair(Constants.SP.TITLE_ACTIVITY_TYPE,TitleWithContentActivity.TYPE_LOGIN)
-//            )
+
+            context.toast(context.resources.getString(R.string.no_login))
             return false
         }
         return true
