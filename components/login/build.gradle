@@ -1,3 +1,7 @@
+
+//若为true，则作为独立项目；
+//若为false，则作为依赖
+
 if (isRunModule.toBoolean()) {
     apply plugin: 'com.android.application'
 } else {
@@ -6,7 +10,7 @@ if (isRunModule.toBoolean()) {
 
 apply plugin: 'kotlin-android'
 apply plugin: 'kotlin-android-extensions'
-apply plugin: 'kotlin-kapt'
+apply plugin: 'kotlin-kapt' //添加kotlin插件
 
 
 android {
@@ -22,7 +26,7 @@ android {
         targetSdkVersion deps.androidx.targetSdkVersion
         versionCode deps.androidx.versionCode
         versionName deps.androidx.versionName
-        javaCompileOptions {
+        javaCompileOptions { //每个子模块都要做这个配置
             annotationProcessorOptions {
                 arguments = [AROUTER_MODULE_NAME: project.getName()]
             }
@@ -69,8 +73,10 @@ dependencies {
     implementation deps.dependencies.arouter_api
     kapt deps.dependencies.arouter_compiler
 
+    //引入公共模块依赖
     implementation project(path: ':commonlibrary')
 
+    //当模块作为独立项目或者依赖时，去加载对应的清单文件
     android {
         sourceSets {
             main {
